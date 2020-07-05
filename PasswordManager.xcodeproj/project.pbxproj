@@ -14,18 +14,24 @@
 		FA9801B324A3A82700E2D44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9801B224A3A82700E2D44E /* Assets.xcassets */; };
 		FA9801B624A3A82700E2D44E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9801B424A3A82700E2D44E /* LaunchScreen.storyboard */; };
 		FA9801C124A3AA9700E2D44E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FA9801C024A3AA9700E2D44E /* .gitignore */; };
+		FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */; };
+		FAE4F21B24B237E800CA80A9 /* PasswordDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */; };
+		FAE4F21E24B2418900CA80A9 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA9801A624A3A82600E2D44E /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9801A924A3A82600E2D44E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9801AB24A3A82600E2D44E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA9801AD24A3A82600E2D44E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = PasswordManager/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		FA9801AD24A3A82600E2D44E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = PasswordManager/Views/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		FA9801B024A3A82600E2D44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA9801B224A3A82700E2D44E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA9801B524A3A82700E2D44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA9801B724A3A82700E2D44E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA9801C024A3AA9700E2D44E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordTableViewCell.swift; path = PasswordManager/Controllers/PasswordTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDetails.swift; sourceTree = "<group>"; };
+		FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,40 +64,59 @@
 		FA9801A824A3A82600E2D44E /* PasswordManager */ = {
 			isa = PBXGroup;
 			children = (
-				FA9801AD24A3A82600E2D44E /* ViewController.swift */,
-				FA9801BF24A3A90700E2D44E /* ViewModel */,
-				FA9801BE24A3A8FC00E2D44E /* View */,
-				FA9801BD24A3A8F400E2D44E /* Model */,
+				FAE4F21C24B2414F00CA80A9 /* Utils */,
+				FA9801C624A3B1D300E2D44E /* ViewModels */,
+				FA9801C524A3B1CA00E2D44E /* Models */,
+				FA9801C324A3B07100E2D44E /* Views */,
+				FA9801C224A3B05300E2D44E /* Storyboards */,
 				FA9801A924A3A82600E2D44E /* AppDelegate.swift */,
 				FA9801AB24A3A82600E2D44E /* SceneDelegate.swift */,
 				FA9801B224A3A82700E2D44E /* Assets.xcassets */,
-				FA9801B424A3A82700E2D44E /* LaunchScreen.storyboard */,
 				FA9801B724A3A82700E2D44E /* Info.plist */,
 				FA9801C024A3AA9700E2D44E /* .gitignore */,
 			);
 			path = PasswordManager;
 			sourceTree = "<group>";
 		};
-		FA9801BD24A3A8F400E2D44E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		FA9801BE24A3A8FC00E2D44E /* View */ = {
+		FA9801C224A3B05300E2D44E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				FA9801AF24A3A82600E2D44E /* Main.storyboard */,
+				FA9801B424A3A82700E2D44E /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		FA9801BF24A3A90700E2D44E /* ViewModel */ = {
+		FA9801C324A3B07100E2D44E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA9801AD24A3A82600E2D44E /* ViewController.swift */,
+				FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA9801C524A3B1CA00E2D44E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA9801C624A3B1D300E2D44E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewModel;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FAE4F21C24B2414F00CA80A9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */,
 				FA9801AE24A3A82600E2D44E /* ViewController.swift in Sources */,
+				FAE4F21B24B237E800CA80A9 /* PasswordDetails.swift in Sources */,
+				FAE4F21E24B2418900CA80A9 /* UIColorExtensions.swift in Sources */,
 				FA9801AA24A3A82600E2D44E /* AppDelegate.swift in Sources */,
 				FA9801AC24A3A82600E2D44E /* SceneDelegate.swift in Sources */,
 			);
