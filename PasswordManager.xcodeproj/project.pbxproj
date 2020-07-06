@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE4F22124B3A57000CA80A9 /* Protocols */,
-				FAE4F21C24B2414F00CA80A9 /* Utils */,
+				FAE4F21C24B2414F00CA80A9 /* Extensions */,
 				FA9801C624A3B1D300E2D44E /* ViewModels */,
 				FA9801C524A3B1CA00E2D44E /* Models */,
 				FA9801C324A3B07100E2D44E /* Views */,
@@ -119,12 +119,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		FAE4F21C24B2414F00CA80A9 /* Utils */ = {
+		FAE4F21C24B2414F00CA80A9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */,
 			);
-			path = Utils;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FAE4F22124B3A57000CA80A9 /* Protocols */ = {
