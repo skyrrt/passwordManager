@@ -55,6 +55,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="copyButton" destination="rg3-KX-oyd" id="tu4-HV-mGt"/>
+                                            <outlet property="detailsButton" destination="kkW-ZM-FEZ" id="88u-Uy-uhY"/>
                                             <outlet property="vendorNameLabel" destination="1by-rh-99G" id="VIi-nv-94w"/>
                                         </connections>
                                     </tableViewCell>

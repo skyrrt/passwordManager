@@ -11,10 +11,16 @@ import UIKit
 class PasswordTableViewCell: UITableViewCell {
 
     @IBOutlet weak var vendorNameLabel: UILabel!
+    @IBOutlet weak var copyButton: UIButton!
+    @IBOutlet weak var detailsButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor(hex: "#6599FF")
-        
+        copyButton.layer.cornerRadius = 10
+        copyButton.clipsToBounds = true
+        detailsButton.layer.cornerRadius = 10
+        detailsButton.clipsToBounds = true
         
         // Initialization code
     }

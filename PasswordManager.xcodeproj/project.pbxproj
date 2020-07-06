@@ -17,6 +17,9 @@
 		FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */; };
 		FAE4F21B24B237E800CA80A9 /* PasswordDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */; };
 		FAE4F21E24B2418900CA80A9 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */; };
+		FAE4F22024B3A52400CA80A9 /* PasswordTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21F24B3A52400CA80A9 /* PasswordTableViewModel.swift */; };
+		FAE4F22324B3A59D00CA80A9 /* PasswordViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22224B3A59D00CA80A9 /* PasswordViewModelProtocol.swift */; };
+		FAE4F22524B3A66500CA80A9 /* PasswordApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22424B3A66500CA80A9 /* PasswordApiProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordTableViewCell.swift; path = PasswordManager/Controllers/PasswordTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDetails.swift; sourceTree = "<group>"; };
 		FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		FAE4F21F24B3A52400CA80A9 /* PasswordTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTableViewModel.swift; sourceTree = "<group>"; };
+		FAE4F22224B3A59D00CA80A9 /* PasswordViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModelProtocol.swift; sourceTree = "<group>"; };
+		FAE4F22424B3A66500CA80A9 /* PasswordApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordApiProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		FA9801A824A3A82600E2D44E /* PasswordManager */ = {
 			isa = PBXGroup;
 			children = (
+				FAE4F22124B3A57000CA80A9 /* Protocols */,
 				FAE4F21C24B2414F00CA80A9 /* Utils */,
 				FA9801C624A3B1D300E2D44E /* ViewModels */,
 				FA9801C524A3B1CA00E2D44E /* Models */,
@@ -107,6 +114,7 @@
 		FA9801C624A3B1D300E2D44E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FAE4F21F24B3A52400CA80A9 /* PasswordTableViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -117,6 +125,15 @@
 				FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FAE4F22124B3A57000CA80A9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FAE4F22224B3A59D00CA80A9 /* PasswordViewModelProtocol.swift */,
+				FAE4F22424B3A66500CA80A9 /* PasswordApiProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,10 +209,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */,
+				FAE4F22024B3A52400CA80A9 /* PasswordTableViewModel.swift in Sources */,
 				FA9801AE24A3A82600E2D44E /* ViewController.swift in Sources */,
+				FAE4F22324B3A59D00CA80A9 /* PasswordViewModelProtocol.swift in Sources */,
 				FAE4F21B24B237E800CA80A9 /* PasswordDetails.swift in Sources */,
 				FAE4F21E24B2418900CA80A9 /* UIColorExtensions.swift in Sources */,
 				FA9801AA24A3A82600E2D44E /* AppDelegate.swift in Sources */,
+				FAE4F22524B3A66500CA80A9 /* PasswordApiProtocol.swift in Sources */,
 				FA9801AC24A3A82600E2D44E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

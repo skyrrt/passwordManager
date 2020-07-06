@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class PasswordDetails {
+    let vendorName: String?
+    let passwordHash: String?
+    let userAccount: String?
+    let decryptedPassword: String?
+    
+    init(vendorName: String, passwordHash: String, userAccount: String, decryptedPassword: String){
+        self.vendorName = vendorName
+        self.passwordHash = passwordHash
+        self.userAccount = userAccount
+        self.decryptedPassword = decryptedPassword
+    }
+    
+}
