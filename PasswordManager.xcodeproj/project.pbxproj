@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1C9B80CE46D018FD4CEA1EC1 /* Pods_PasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0914AAEA5C0A052ECC1AF8C /* Pods_PasswordManager.framework */; };
 		FA9801AA24A3A82600E2D44E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9801A924A3A82600E2D44E /* AppDelegate.swift */; };
 		FA9801AC24A3A82600E2D44E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9801AB24A3A82600E2D44E /* SceneDelegate.swift */; };
-		FA9801AE24A3A82600E2D44E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9801AD24A3A82600E2D44E /* ViewController.swift */; };
+		FA9801AE24A3A82600E2D44E /* PasswordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9801AD24A3A82600E2D44E /* PasswordListViewController.swift */; };
 		FA9801B124A3A82600E2D44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9801AF24A3A82600E2D44E /* Main.storyboard */; };
 		FA9801B324A3A82700E2D44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9801B224A3A82700E2D44E /* Assets.xcassets */; };
 		FA9801B624A3A82700E2D44E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9801B424A3A82700E2D44E /* LaunchScreen.storyboard */; };
@@ -22,6 +22,9 @@
 		FAE4F22324B3A59D00CA80A9 /* PasswordViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22224B3A59D00CA80A9 /* PasswordViewModelProtocol.swift */; };
 		FAE4F22524B3A66500CA80A9 /* PasswordApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22424B3A66500CA80A9 /* PasswordApiProtocol.swift */; };
 		FAE4F22724B5006000CA80A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE4F22624B5006000CA80A9 /* GoogleService-Info.plist */; };
+		FAE4F22924B79C5500CA80A9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22824B79C5500CA80A9 /* WelcomeViewController.swift */; };
+		FAE4F22B24B79C6500CA80A9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22A24B79C6500CA80A9 /* SignUpViewController.swift */; };
+		FAE4F22D24B79C7300CA80A9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22C24B79C7300CA80A9 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +34,7 @@
 		FA9801A624A3A82600E2D44E /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9801A924A3A82600E2D44E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9801AB24A3A82600E2D44E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA9801AD24A3A82600E2D44E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = PasswordManager/Views/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		FA9801AD24A3A82600E2D44E /* PasswordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordListViewController.swift; path = PasswordManager/Views/PasswordListViewController.swift; sourceTree = SOURCE_ROOT; };
 		FA9801B024A3A82600E2D44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA9801B224A3A82700E2D44E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA9801B524A3A82700E2D44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +47,9 @@
 		FAE4F22224B3A59D00CA80A9 /* PasswordViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModelProtocol.swift; sourceTree = "<group>"; };
 		FAE4F22424B3A66500CA80A9 /* PasswordApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordApiProtocol.swift; sourceTree = "<group>"; };
 		FAE4F22624B5006000CA80A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAE4F22824B79C5500CA80A9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FAE4F22A24B79C6500CA80A9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FAE4F22C24B79C7300CA80A9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +78,6 @@
 				F80AA9BA3318DD3CF5FBB7F0 /* Pods-PasswordManager.debug.xcconfig */,
 				458FFC14352B5A43AC266F64 /* Pods-PasswordManager.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -125,8 +130,11 @@
 		FA9801C324A3B07100E2D44E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA9801AD24A3A82600E2D44E /* ViewController.swift */,
+				FA9801AD24A3A82600E2D44E /* PasswordListViewController.swift */,
 				FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */,
+				FAE4F22824B79C5500CA80A9 /* WelcomeViewController.swift */,
+				FAE4F22A24B79C6500CA80A9 /* SignUpViewController.swift */,
+				FAE4F22C24B79C7300CA80A9 /* SignInViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,12 +289,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE4F22B24B79C6500CA80A9 /* SignUpViewController.swift in Sources */,
 				FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */,
+				FAE4F22924B79C5500CA80A9 /* WelcomeViewController.swift in Sources */,
 				FAE4F22024B3A52400CA80A9 /* PasswordTableViewModel.swift in Sources */,
-				FA9801AE24A3A82600E2D44E /* ViewController.swift in Sources */,
+				FA9801AE24A3A82600E2D44E /* PasswordListViewController.swift in Sources */,
 				FAE4F22324B3A59D00CA80A9 /* PasswordViewModelProtocol.swift in Sources */,
 				FAE4F21B24B237E800CA80A9 /* PasswordDetails.swift in Sources */,
 				FAE4F21E24B2418900CA80A9 /* UIColorExtensions.swift in Sources */,
+				FAE4F22D24B79C7300CA80A9 /* SignInViewController.swift in Sources */,
 				FA9801AA24A3A82600E2D44E /* AppDelegate.swift in Sources */,
 				FAE4F22524B3A66500CA80A9 /* PasswordApiProtocol.swift in Sources */,
 				FA9801AC24A3A82600E2D44E /* SceneDelegate.swift in Sources */,
