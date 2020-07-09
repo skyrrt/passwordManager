@@ -204,6 +204,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
+                                    <action selector="signUpPressed:" destination="aAV-y2-jor" eventType="touchUpInside" id="xne-ak-7VU"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="swd-Eg-T1o"/>
                                 </connections>
                             </button>
@@ -230,7 +231,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vts-IW-Z20">
                                         <rect key="frame" x="20" y="147" width="314" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -252,6 +253,10 @@
                         <viewLayoutGuide key="safeArea" id="m8F-h6-qcJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZYB-X9-5TC"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="ZPX-52-1pw" id="1F9-IJ-B3T"/>
+                        <outlet property="passwordTextField" destination="vts-IW-Z20" id="Leh-lS-Pi1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSk-2K-ZJM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,6 +280,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ABI-Xr-erB"/>
+        <segue reference="swd-Eg-T1o"/>
     </inferredMetricsTieBreakers>
 </document>
