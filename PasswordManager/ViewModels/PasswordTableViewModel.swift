@@ -9,7 +9,7 @@
 import Foundation
 
 class PasswordTableViewModel {
-    var passwordList:[PasswordDetails] = []
+    var passwordList: [PasswordDetails] = []
     
     
 }

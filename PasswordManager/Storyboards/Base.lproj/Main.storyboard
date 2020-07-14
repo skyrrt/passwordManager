@@ -155,8 +155,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="APPLICATION LOGO PLACEHOLDER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJg-Pu-sdY">
-                                <rect key="frame" x="20" y="240" width="374" height="150"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APPLICATION LOGO PLACEHOLDER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJg-Pu-sdY">
+                                <rect key="frame" x="20" y="138" width="374" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -181,6 +181,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="IJg-Pu-sdY" firstAttribute="leading" secondItem="ULc-K9-GhN" secondAttribute="leading" constant="20" id="57u-Az-8hc"/>
+                            <constraint firstItem="IJg-Pu-sdY" firstAttribute="top" secondItem="ULc-K9-GhN" secondAttribute="top" constant="50" id="GZM-nH-nX4"/>
                             <constraint firstItem="ULc-K9-GhN" firstAttribute="trailing" secondItem="IJg-Pu-sdY" secondAttribute="trailing" constant="20" id="ULe-ET-A9L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ULc-K9-GhN"/>

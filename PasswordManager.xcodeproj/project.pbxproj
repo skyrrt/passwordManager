@@ -25,6 +25,8 @@
 		FAE4F22924B79C5500CA80A9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22824B79C5500CA80A9 /* WelcomeViewController.swift */; };
 		FAE4F22B24B79C6500CA80A9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22A24B79C6500CA80A9 /* SignUpViewController.swift */; };
 		FAE4F22D24B79C7300CA80A9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22C24B79C7300CA80A9 /* SignInViewController.swift */; };
+		FAEE44F724BCC8C10039B25D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44F624BCC8C10039B25D /* SignUpViewModel.swift */; };
+		FAEE44F924BCC94D0039B25D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44F824BCC94D0039B25D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		FAE4F22824B79C5500CA80A9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		FAE4F22A24B79C6500CA80A9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAE4F22C24B79C7300CA80A9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		FAEE44F624BCC8C10039B25D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		FAEE44F824BCC94D0039B25D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */,
+				FAEE44F824BCC94D0039B25D /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE4F21F24B3A52400CA80A9 /* PasswordTableViewModel.swift */,
+				FAEE44F624BCC8C10039B25D /* SignUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -293,7 +299,9 @@
 				FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */,
 				FAE4F22924B79C5500CA80A9 /* WelcomeViewController.swift in Sources */,
 				FAE4F22024B3A52400CA80A9 /* PasswordTableViewModel.swift in Sources */,
+				FAEE44F724BCC8C10039B25D /* SignUpViewModel.swift in Sources */,
 				FA9801AE24A3A82600E2D44E /* PasswordListViewController.swift in Sources */,
+				FAEE44F924BCC94D0039B25D /* User.swift in Sources */,
 				FAE4F22324B3A59D00CA80A9 /* PasswordViewModelProtocol.swift in Sources */,
 				FAE4F21B24B237E800CA80A9 /* PasswordDetails.swift in Sources */,
 				FAE4F21E24B2418900CA80A9 /* UIColorExtensions.swift in Sources */,

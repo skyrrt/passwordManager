@@ -6,6 +6,6 @@ target 'PasswordManager' do
   use_frameworks!
 
   # Pods for PasswordManager
-	pod 'Firebase/Analytics'
 	pod 'Firebase/Firestore'
+	pod 'Firebase/Auth'
 end
