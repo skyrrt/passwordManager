@@ -19,17 +19,24 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signUpViewModel = SignUpViewModel.init()
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                print(user.email)
+                self.performSegue(withIdentifier: "RegisterToList", sender: nil)
+                self.emailTextField.text = nil
+                self.passwordTextField.text = nil
+            }
+        }
     }
+    
     
     @IBAction func signUpPressed(_ sender: Any) {
         signUpViewModel!.registerUser(userName: emailTextField.text, password: passwordTextField.text) { (result) -> () in
                 
             if let error = result.get() as? Error {
                 self.showAlert(withTitle: "Error", withMessage: error.localizedDescription, withButtonTitle: "OK")
-            } else if let authResult = result.get() as? AuthDataResult {
-                self.showAlert(withTitle: "OK", withMessage: "OK", withButtonTitle: "OK")
             }
-                
         }
         
     }

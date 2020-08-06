@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YyS-fw-AmR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YyS-fw-AmR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -55,7 +55,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="25q-C7-Cvn"/>
+                                    <action selector="signInPressed:" destination="K9W-JC-FsC" eventType="touchUpInside" id="wjV-E6-NLS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuk-fl-oob">
@@ -63,7 +63,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In using FaceRecognition mechanism"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ABI-Xr-erB"/>
+                                    <action selector="signInUsingFaceRecognitionPressed:" destination="K9W-JC-FsC" eventType="touchUpInside" id="pHH-Qs-Mew"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,6 +77,11 @@
                         <viewLayoutGuide key="safeArea" id="yex-Wv-GpD"/>
                     </view>
                     <navigationItem key="navigationItem" id="AnU-3P-XJr"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="KRB-wF-aLY" id="UcS-Ux-BF4"/>
+                        <outlet property="passwordTextField" destination="Ovl-XF-N9h" id="322-li-J14"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToList" id="XgP-hK-jf3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ub-UI-Yr5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,7 +211,6 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUpPressed:" destination="aAV-y2-jor" eventType="touchUpInside" id="xne-ak-7VU"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="swd-Eg-T1o"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2dB-WH-CxV">
@@ -257,6 +261,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="ZPX-52-1pw" id="1F9-IJ-B3T"/>
                         <outlet property="passwordTextField" destination="vts-IW-Z20" id="Leh-lS-Pi1"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="RegisterToList" id="xf9-4V-ZEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSk-2K-ZJM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -281,6 +286,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="swd-Eg-T1o"/>
+        <segue reference="xf9-4V-ZEa"/>
     </inferredMetricsTieBreakers>
 </document>

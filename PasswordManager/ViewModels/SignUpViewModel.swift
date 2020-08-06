@@ -13,12 +13,11 @@ class SignUpViewModel {
     
     func registerUser(userName: String?, password: String?, completion: @escaping (SignUpResult) -> ()) {
         if let user = userName, let pass = password {
-            print("User: \(user) pass:\(pass)")
             Auth.auth().createUser(withEmail: user, password: pass) { (authData, error) in
                 if let e = error {
                      completion(SignUpResult.error(e))
                 } else {
-                    completion(SignUpResult.success(authData!))
+                    Auth.auth().signIn(withEmail: user, password: pass)
                 }
             }
         }
