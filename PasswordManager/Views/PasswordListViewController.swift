@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PasswordListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func signOutClicked(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "unwindToWelcomeViewController", sender: self)
+            
+        } catch (let error) {
+          print("Auth sign out failed: \(error)")
+        }
+    }
+    
 }
 

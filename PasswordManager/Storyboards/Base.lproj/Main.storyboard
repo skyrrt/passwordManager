@@ -146,9 +146,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nDX-gR-ofK"/>
+                    <navigationItem key="navigationItem" id="nDX-gR-ofK">
+                        <barButtonItem key="rightBarButtonItem" title="SignOut" id="9cx-m2-wbK" userLabel="SignOut">
+                            <connections>
+                                <action selector="signOutClicked:" destination="BYZ-38-t0r" id="gEI-qB-6mg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="JsJ-Gc-f0M" kind="unwind" identifier="unwindToWelcomeViewController" unwindAction="prepareForUnwindWithSegue:" id="jCv-s7-mVh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="JsJ-Gc-f0M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="84" y="113"/>
         </scene>

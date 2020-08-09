@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class PasswordTableViewModel {
     var passwordList: [PasswordDetails] = []
-    
     
 }
