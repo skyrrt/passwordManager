@@ -17,9 +17,9 @@ class PasswordTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor(hex: "#6599FF")
-        copyButton.layer.cornerRadius = 10
+        copyButton.layer.cornerRadius = 15
         copyButton.clipsToBounds = true
-        detailsButton.layer.cornerRadius = 10
+        detailsButton.layer.cornerRadius = 15
         detailsButton.clipsToBounds = true
         
         // Initialization code
