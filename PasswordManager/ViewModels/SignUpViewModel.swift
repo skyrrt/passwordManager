@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseAuth
 
-class SignUpViewModel {
+class SignUpViewModel: SignUpViewModelProtocol {
     
     func registerUser(userName: String?, password: String?, completion: @escaping (SignUpResult) -> ()) {
         if let user = userName, let pass = password {

@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseAuth
 
-class SignInViewModel {
+class SignInViewModel: SignInViewModelProtocol {
     
     func authenticateUser(userName: String?, password: String?, completion: @escaping (SignInResult) -> Void) {
         guard

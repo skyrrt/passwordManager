@@ -7,29 +7,26 @@
 //
 
 import Foundation
-import FirebaseAuth
-import FirebaseFirestore
+import RxSwift
+import RxRelay
 
-class PasswordViewModel {
+
+class PasswordViewModel: PasswordViewModelProtocol {
     
-    let db = Firestore.firestore()
-    var passwords: [PasswordDetails] = []
-    func createPassword(withName: String, password: String, login: String) {
-        if let currentUser = Auth.auth().currentUser {
-            
-            let passwordDetails = PasswordDetails(vendorName: withName, passwordHash: password, userAccount: login, createdBy: currentUser.uid, groupId: nil)
-            db.collection("passwords").addDocument(data: passwordDetails.toAnyObject()) {
-                (error) in
-                if let e = error {
-                    print("lipa \(e)")
-                } else {
-                    self.passwords.append(passwordDetails)
-                }
-            }
-        }
+    var passwordCollection = BehaviorRelay<[PasswordDetails]>(value: [PasswordDetails]())
+    var webService: WebServiceProtocol
+    
+    required init(webService: WebServiceProtocol) {
+        self.webService = webService
     }
     
-    func fetchPasswords() -> [PasswordDetails] {
-        return passwords
+    func createPassword(withName name: String, password: String, login: String) {
+        webService.createPassword(withName: name, password: password, login: login)
+    }
+    
+    func fetchPasswords() {
+        webService.fetchPasswords(completion: {
+            passwords in self.passwordCollection.accept(passwords)
+        })
     }
 }

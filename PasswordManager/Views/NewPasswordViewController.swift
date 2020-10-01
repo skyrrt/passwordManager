@@ -18,7 +18,7 @@ class NewPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        passwordViewModel = PasswordViewModel.init()
+        passwordViewModel = PasswordViewModel.init(webService: WebService())
     }
     
 

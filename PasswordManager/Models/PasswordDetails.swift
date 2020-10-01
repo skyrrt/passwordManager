@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PasswordDetails {
+class PasswordDetails: Codable {
     let vendorName: String
     let passwordHash: String
     let userAccount: String
@@ -23,13 +23,12 @@ class PasswordDetails {
         self.groupId = groupId
     }
     
-    func toAnyObject() -> [String: String?] {
-        return [
-            "vendorName": vendorName,
-            "passwordHash": passwordHash,
-            "userAccount": userAccount,
-            "createdBy": createdBy,
-            "groupId": groupId
-        ]
+    enum CodingKeys: String, CodingKey {
+        case vendorName
+        case passwordHash
+        case userAccount
+        case createdBy
+        case groupId
     }
+    
 }
