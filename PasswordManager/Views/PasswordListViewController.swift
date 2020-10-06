@@ -26,6 +26,7 @@ class PasswordListViewController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.repopulateView()
             }).disposed(by: disposeBag)
+        passwordViewModel?.fetchPasswords()
     }
 
     @IBAction func signOutClicked(_ sender: UIBarButtonItem) {
@@ -39,6 +40,14 @@ class PasswordListViewController: UIViewController {
     }
     @IBAction func addPasswordClicked(_ sender: UIButton) {
         self.performSegue(withIdentifier: "createNewPasswordSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createNewPasswordSegue" {
+            if let viewController = segue.destination as? NewPasswordViewController {
+                viewController.passwordViewModel = self.passwordViewModel
+            }
+        }
     }
     
     func repopulateView() {

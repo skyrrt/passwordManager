@@ -19,4 +19,6 @@ protocol PasswordViewModelProtocol {
     init(webService: WebServiceProtocol)
     
     func fetchPasswords()
+    
+    func createPassword(withName name: String, password: String, login: String)
 }

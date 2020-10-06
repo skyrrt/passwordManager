@@ -14,14 +14,11 @@ class NewPasswordViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repPasswordTextFIeld: UITextField!
-    var passwordViewModel: PasswordViewModel?
+    var passwordViewModel: PasswordViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        passwordViewModel = PasswordViewModel.init(webService: WebService())
     }
-    
-
     
     @IBAction func generatePressed(_ sender: UIButton) {
     }
@@ -43,6 +40,8 @@ class NewPasswordViewController: UIViewController {
             return
         }
         passwordViewModel?.createPassword(withName: passName, password: pass, login: login)
+        passwordViewModel?.fetchPasswords()
+        dismiss(animated: false, completion: nil)
     }
     
 }
