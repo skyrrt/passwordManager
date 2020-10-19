@@ -13,17 +13,17 @@ class PasswordTableViewCell: UITableViewCell {
     @IBOutlet weak var vendorNameLabel: UILabel!
     @IBOutlet weak var copyButton: UIButton!
     @IBOutlet weak var detailsButton: UIButton!
+    var passwordDetails: PasswordDetails!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor(hex: "#6599FF")
+        self.backgroundColor = UIColor(hex: "#6598ff")
         copyButton.layer.cornerRadius = 15
         copyButton.clipsToBounds = true
         detailsButton.layer.cornerRadius = 15
-        detailsButton.clipsToBounds = true
-        
-        // Initialization code
+        detailsButton.clipsToBounds = true        
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -31,9 +31,11 @@ class PasswordTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func copyTapped(_ sender: UIButton) {
+        print("copy")
     }
     
     @IBAction func detailsTapped(_ sender: UIButton) {
+        print("details")
     }
     
 }

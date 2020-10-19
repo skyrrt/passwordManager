@@ -63,7 +63,8 @@ extension PasswordListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PasswordTableViewCell", for: indexPath) as! PasswordTableViewCell
-        cell.vendorNameLabel.text = passwordViewModel?.passwordCollection.value[indexPath.row].vendorName
+        cell.passwordDetails = passwordViewModel?.passwordCollection.value[indexPath.row]
+        cell.vendorNameLabel.text = cell.passwordDetails.vendorName
         return cell
     }
     
