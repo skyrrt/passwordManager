@@ -8,6 +8,7 @@ target 'PasswordManager' do
   # Pods for PasswordManager
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Auth'
+	pod 'SideMenu'
   pod 'FirebaseFirestoreSwift'
   pod 'RxSwift'
   pod 'RxCocoa'

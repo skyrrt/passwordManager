@@ -16,6 +16,7 @@
 		FA2038CA2520950F00FC30B0 /* WebServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2038C92520950F00FC30B0 /* WebServiceProtocol.swift */; };
 		FA2038CC2520999E00FC30B0 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2038CB2520999E00FC30B0 /* WebService.swift */; };
 		FA51D4DB24DB048200276410 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51D4DA24DB048200276410 /* SignInViewModel.swift */; };
+		FA7056772545C9CD00DAC06B /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7056762545C9CD00DAC06B /* SideMenuViewController.swift */; };
 		FA953A6924EC7E4A005AA175 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA953A6824EC7E4A005AA175 /* PasswordViewModel.swift */; };
 		FA9801AA24A3A82600E2D44E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9801A924A3A82600E2D44E /* AppDelegate.swift */; };
 		FA9801AC24A3A82600E2D44E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9801AB24A3A82600E2D44E /* SceneDelegate.swift */; };
@@ -47,6 +48,7 @@
 		FA2038C92520950F00FC30B0 /* WebServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceProtocol.swift; sourceTree = "<group>"; };
 		FA2038CB2520999E00FC30B0 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		FA51D4DA24DB048200276410 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		FA7056762545C9CD00DAC06B /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		FA953A6824EC7E4A005AA175 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		FA9801A624A3A82600E2D44E /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9801A924A3A82600E2D44E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				FAE4F22C24B79C7300CA80A9 /* SignInViewController.swift */,
 				FA1A6E6724E2F73B002ECCA2 /* NewPasswordViewController.swift */,
 				FA1A6E6924E2F75A002ECCA2 /* ModifyPasswordViewController.swift */,
+				FA7056762545C9CD00DAC06B /* SideMenuViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				FA953A6924EC7E4A005AA175 /* PasswordViewModel.swift in Sources */,
 				FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */,
 				FAE4F22924B79C5500CA80A9 /* WelcomeViewController.swift in Sources */,
+				FA7056772545C9CD00DAC06B /* SideMenuViewController.swift in Sources */,
 				FAEE44F724BCC8C10039B25D /* SignUpViewModel.swift in Sources */,
 				FA9801AE24A3A82600E2D44E /* PasswordListViewController.swift in Sources */,
 				FA1A6E6A24E2F75A002ECCA2 /* ModifyPasswordViewController.swift in Sources */,

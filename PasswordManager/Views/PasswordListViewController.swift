@@ -9,17 +9,20 @@
 import UIKit
 import FirebaseAuth
 import RxSwift
+import SideMenu
 
 class PasswordListViewController: UIViewController {
 
     @IBOutlet weak var passwordTableView: UITableView!
-    
+    private let sideMenu = SideMenuNavigationController(rootViewController: SideMenuViewController())
     var passwordViewModel: PasswordViewModelProtocol?
-    
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        sideMenu.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
         passwordTableView.dataSource = self
         passwordViewModel = PasswordViewModel(webService: WebService())
         passwordViewModel?.passwordCollection.asObservable()
@@ -38,8 +41,13 @@ class PasswordListViewController: UIViewController {
           print("Auth sign out failed: \(error)")
         }
     }
+    
     @IBAction func addPasswordClicked(_ sender: UIButton) {
         self.performSegue(withIdentifier: "createNewPasswordSegue", sender: nil)
+    }
+    
+    @IBAction func menuButtonTapped() {
+        present(sideMenu, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

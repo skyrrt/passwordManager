@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,7 +89,7 @@
             </objects>
             <point key="canvasLocation" x="-1055.072463768116" y="378.34821428571428"/>
         </scene>
-        <!--Password List View Controller-->
+        <!--Passwords-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PasswordListViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,16 +97,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Bw0-XD-ehy">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add new password"/>
-                                <connections>
-                                    <action selector="addPasswordClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Gj-fJ-Nkj"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-22-0Da">
-                                <rect key="frame" x="0.0" y="44" width="414" height="766"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="722"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -156,22 +148,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iQZ-dJ-sxL">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Personal" image="person.fill" catalog="system" id="1W7-ET-hdV"/>
+                                    <tabBarItem title="Group" image="person.2.fill" catalog="system" id="hyh-TE-I9U"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nDX-gR-ofK">
-                        <barButtonItem key="rightBarButtonItem" title="SignOut" id="9cx-m2-wbK" userLabel="SignOut">
+                    <navigationItem key="navigationItem" title="Passwords" id="aBd-nu-3Jf">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" image="line.horizontal.3" catalog="system" id="tm2-IC-YwS">
                             <connections>
-                                <action selector="signOutClicked:" destination="BYZ-38-t0r" id="gEI-qB-6mg"/>
+                                <action selector="menuButtonTapped" destination="BYZ-38-t0r" id="0zz-NV-eFp"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="FGE-wg-V8A"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="passwordTableView" destination="Iba-22-0Da" id="d77-Ab-Olh"/>
                         <segue destination="JsJ-Gc-f0M" kind="unwind" identifier="unwindToWelcomeViewController" unwindAction="prepareForUnwindWithSegue:" id="jCv-s7-mVh"/>
                         <segue destination="8ke-YD-M87" kind="presentation" identifier="showDetailsSegue" id="hWd-R8-gAu"/>
-                        <segue destination="ppJ-an-CMY" kind="presentation" identifier="createNewPasswordSegue" id="Pti-HM-xOe"/>
+                        <segue destination="ppJ-an-CMY" kind="show" id="QRi-py-7ar"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -184,11 +187,11 @@
             <objects>
                 <viewController storyboardIdentifier="NewPasswordViewController" id="ppJ-an-CMY" customClass="NewPasswordViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CV6-df-Cz1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A59-R3-I5u">
-                                <rect key="frame" x="30" y="140" width="354" height="548"/>
+                                <rect key="frame" x="30" y="228" width="354" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz2-6z-Azj">
                                         <rect key="frame" x="117" y="0.0" width="120" height="20.5"/>
@@ -269,6 +272,7 @@
                             <constraint firstItem="A59-R3-I5u" firstAttribute="leading" secondItem="Bak-HD-uqG" secondAttribute="leading" constant="30" id="yyb-Re-1VL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CRH-AC-xH5"/>
                     <connections>
                         <outlet property="loginTextField" destination="9Ft-a1-DlE" id="SBR-r7-cRn"/>
                         <outlet property="passNameTextField" destination="ucl-AO-u3N" id="GLe-4H-phM"/>
@@ -278,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bob-qu-CMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421.7391304347827" y="587.94642857142856"/>
+            <point key="canvasLocation" x="836" y="-1295"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="i8m-kw-vjZ">
@@ -455,13 +459,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MlW-oz-bva" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421.7391304347827" y="-368.30357142857139"/>
+            <point key="canvasLocation" x="-907" y="-1344"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xf9-4V-ZEa"/>
+        <segue reference="XgP-hK-jf3"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
