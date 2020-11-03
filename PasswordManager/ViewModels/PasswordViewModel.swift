@@ -24,6 +24,10 @@ class PasswordViewModel: PasswordViewModelProtocol {
         webService.createPassword(withName: name, password: password, login: login)
     }
     
+    func fetchGroupPasswords() {
+        passwordCollection.accept([])
+    }
+    
     func fetchPasswords() {
         webService.fetchPasswords(completion: {
             passwords in self.passwordCollection.accept(passwords)

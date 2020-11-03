@@ -8,9 +8,21 @@
 
 import UIKit
 
+enum MenuLabel: String, CaseIterable {
+    case passwords = "Passwords"
+    case groupPasswords = "Group passwords"
+    case groups = "Groups"
+    case appInfo = "App info"
+    case signOut = "SignOut"
+}
+
+protocol SideMenuControllerDelegate {
+    func didSelectMenuItem(withName: MenuLabel)
+}
+
 class SideMenuViewController: UITableViewController {
-    
-    private let menuItems = ["Passwords", "Groups", "App info", "Sign out"]
+    let menuItems = MenuLabel.allCases
+    var delegate: SideMenuControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +40,18 @@ class SideMenuViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = menuItems[indexPath.row]
+        cell.textLabel?.text = menuItems[indexPath.row].rawValue
         cell.textLabel?.textColor = .white
         cell.textLabel?.backgroundColor = .darkGray
         cell.contentView.backgroundColor = .darkGray
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("dupa")
+        let selectedItem = menuItems[indexPath.row]
+        delegate?.didSelectMenuItem(withName: selectedItem)
     }
 }
+
+ 

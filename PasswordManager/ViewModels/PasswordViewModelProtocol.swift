@@ -20,5 +20,7 @@ protocol PasswordViewModelProtocol {
     
     func fetchPasswords()
     
+    func fetchGroupPasswords()
+    
     func createPassword(withName name: String, password: String, login: String)
 }

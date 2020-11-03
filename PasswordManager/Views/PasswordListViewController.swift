@@ -7,20 +7,23 @@
 //
 
 import UIKit
-import FirebaseAuth
 import RxSwift
 import SideMenu
+import FirebaseAuth
 
-class PasswordListViewController: UIViewController {
-
+class PasswordListViewController: UIViewController, SideMenuControllerDelegate {
+    
     @IBOutlet weak var passwordTableView: UITableView!
-    private let sideMenu = SideMenuNavigationController(rootViewController: SideMenuViewController())
+    private var sideMenu: SideMenuNavigationController?
     var passwordViewModel: PasswordViewModelProtocol?
     let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideMenu.leftSide = true
+        let menu = SideMenuViewController()
+        menu.delegate = self
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
         SideMenuManager.default.leftMenuNavigationController = sideMenu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
         passwordTableView.dataSource = self
@@ -30,16 +33,7 @@ class PasswordListViewController: UIViewController {
                 self?.repopulateView()
             }).disposed(by: disposeBag)
         passwordViewModel?.fetchPasswords()
-    }
-
-    @IBAction func signOutClicked(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-            self.navigationController?.popToRootViewController(animated: true)
-            
-        } catch (let error) {
-          print("Auth sign out failed: \(error)")
-        }
+        
     }
     
     @IBAction func addPasswordClicked(_ sender: UIButton) {
@@ -47,7 +41,17 @@ class PasswordListViewController: UIViewController {
     }
     
     @IBAction func menuButtonTapped() {
-        present(sideMenu, animated: true)
+        present(sideMenu!, animated: true)
+    }
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        } catch (let error) {
+            print("Auth sign out failed: \(error)")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,6 +64,25 @@ class PasswordListViewController: UIViewController {
     
     func repopulateView() {
         self.passwordTableView.reloadData()
+    }
+    
+    func didSelectMenuItem(withName: MenuLabel) {
+        sideMenu?.dismiss(animated: true, completion: nil)
+        
+        switch withName {
+        case .appInfo:
+            view.backgroundColor = .black
+        case .groups:
+            view.backgroundColor = .blue
+        case .passwords:
+            passwordViewModel?.fetchPasswords()
+            repopulateView()
+        case .groupPasswords:
+            passwordViewModel?.fetchGroupPasswords()
+            repopulateView()
+        case .signOut:
+            signOut()
+        }
     }
     
 }
