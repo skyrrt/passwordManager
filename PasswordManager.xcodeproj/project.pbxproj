@@ -66,7 +66,7 @@
 		FA9801B224A3A82700E2D44E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA9801B524A3A82700E2D44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA9801B724A3A82700E2D44E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA9801C024A3AA9700E2D44E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FA9801C024A3AA9700E2D44E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = PasswordManager/.gitignore; sourceTree = "<group>"; };
 		FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordTableViewCell.swift; path = PasswordManager/Controllers/PasswordTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDetails.swift; sourceTree = "<group>"; };
 		FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -119,6 +119,7 @@
 		FA98019D24A3A82600E2D44E = {
 			isa = PBXGroup;
 			children = (
+				FA9801C024A3AA9700E2D44E /* .gitignore */,
 				FA9801A824A3A82600E2D44E /* PasswordManager */,
 				FA9801A724A3A82600E2D44E /* Products */,
 				E10BB2D85D5B887FDB22A82A /* Pods */,
@@ -148,7 +149,6 @@
 				FA9801B224A3A82700E2D44E /* Assets.xcassets */,
 				FA9801B724A3A82700E2D44E /* Info.plist */,
 				FAE4F22624B5006000CA80A9 /* GoogleService-Info.plist */,
-				FA9801C024A3AA9700E2D44E /* .gitignore */,
 			);
 			path = PasswordManager;
 			sourceTree = "<group>";
