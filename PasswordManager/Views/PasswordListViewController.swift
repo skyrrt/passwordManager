@@ -16,6 +16,7 @@ class PasswordListViewController: UIViewController, SideMenuControllerDelegate {
     @IBOutlet weak var passwordTableView: UITableView!
     private var sideMenu: SideMenuNavigationController?
     var passwordViewModel: PasswordViewModelProtocol?
+    let appInfoController = AppInfoViewController()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -33,6 +34,7 @@ class PasswordListViewController: UIViewController, SideMenuControllerDelegate {
                 self?.repopulateView()
             }).disposed(by: disposeBag)
         passwordViewModel?.fetchPasswords()
+        addChildControllers()
         
     }
     
@@ -42,6 +44,15 @@ class PasswordListViewController: UIViewController, SideMenuControllerDelegate {
     
     @IBAction func menuButtonTapped() {
         present(sideMenu!, animated: true)
+    }
+    
+    func addChildControllers() {
+        addChild(appInfoController)
+        view.addSubview(appInfoController.view)
+        appInfoController.view.frame = view.bounds
+        appInfoController.didMove(toParent: self)
+        appInfoController.view.isHidden = true
+        
     }
     
     func signOut() {
@@ -69,15 +80,19 @@ class PasswordListViewController: UIViewController, SideMenuControllerDelegate {
     func didSelectMenuItem(withName: MenuLabel) {
         sideMenu?.dismiss(animated: true, completion: nil)
         
+        self.title = withName.rawValue
+        
         switch withName {
         case .appInfo:
-            view.backgroundColor = .black
+            appInfoController.view.isHidden = false
         case .groups:
             view.backgroundColor = .blue
         case .passwords:
+            appInfoController.view.isHidden = true
             passwordViewModel?.fetchPasswords()
             repopulateView()
         case .groupPasswords:
+            appInfoController.view.isHidden = true
             passwordViewModel?.fetchGroupPasswords()
             repopulateView()
         case .signOut:
