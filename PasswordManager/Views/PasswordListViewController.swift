@@ -16,7 +16,7 @@ class PasswordListViewController: UIViewController, SideMenuControllerDelegate {
     @IBOutlet weak var passwordTableView: UITableView!
     private var sideMenu: SideMenuNavigationController?
     var passwordViewModel: PasswordViewModelProtocol?
-    let appInfoController = AppInfoViewController()
+    let appInfoController = UIStoryboard.init(name: "AppInfo", bundle: nil).instantiateViewController(withIdentifier: "AppInfoViewController")
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {

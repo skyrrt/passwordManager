@@ -28,7 +28,6 @@
 		FA9801B124A3A82600E2D44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9801AF24A3A82600E2D44E /* Main.storyboard */; };
 		FA9801B324A3A82700E2D44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9801B224A3A82700E2D44E /* Assets.xcassets */; };
 		FA9801B624A3A82700E2D44E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9801B424A3A82700E2D44E /* LaunchScreen.storyboard */; };
-		FA9801C124A3AA9700E2D44E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FA9801C024A3AA9700E2D44E /* .gitignore */; };
 		FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */; };
 		FAE4F21B24B237E800CA80A9 /* PasswordDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */; };
 		FAE4F21E24B2418900CA80A9 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */; };
@@ -271,7 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9801C124A3AA9700E2D44E /* .gitignore in Resources */,
 				FA9801B624A3A82700E2D44E /* LaunchScreen.storyboard in Resources */,
 				FA0FD8A32551CBFC00B7394D /* Groups.storyboard in Resources */,
 				FAE4F22724B5006000CA80A9 /* GoogleService-Info.plist in Resources */,
