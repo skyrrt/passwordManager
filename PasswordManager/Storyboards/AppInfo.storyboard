@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--App Info View Controller-->
+        <!--AppInfo-->
         <scene sceneID="RK3-S6-JAe">
             <objects>
                 <viewController storyboardIdentifier="AppInfoViewController" id="1bh-7c-K0u" customClass="AppInfoViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,6 +49,8 @@
                             <constraint firstItem="TXV-7c-L7d" firstAttribute="top" secondItem="q9h-p0-SaT" secondAttribute="top" constant="200" id="roa-JI-Ez9"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="AppInfo" image="info" catalog="system" id="7U2-5R-xj4"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4C-Rv-uMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,6 +58,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info" catalog="system" width="93" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

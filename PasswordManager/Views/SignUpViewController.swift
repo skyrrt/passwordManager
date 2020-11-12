@@ -22,7 +22,6 @@ class SignUpViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
-                print(user.email)
                 self.performSegue(withIdentifier: "RegisterToList", sender: nil)
                 self.emailTextField.text = nil
                 self.passwordTextField.text = nil

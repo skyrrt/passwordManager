@@ -309,7 +309,6 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
-  - SideMenu (6.5.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -318,7 +317,6 @@ DEPENDENCIES:
   - RxCocoa
   - RxRelay
   - RxSwift
-  - SideMenu
 
 SPEC REPOS:
   trunk:
@@ -341,7 +339,6 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
-    - SideMenu
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -363,8 +360,7 @@ SPEC CHECKSUMS:
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 1d88cb9dc6db6a18974a605a8a0bdf414fbff75e
+PODFILE CHECKSUM: db8f48799c84dd537a4d6624d4b9f71ee6c45640
 
 COCOAPODS: 1.9.1

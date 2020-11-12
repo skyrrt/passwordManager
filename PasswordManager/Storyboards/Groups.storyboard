@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LOe-pc-YVy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Groups View Controller-->
         <scene sceneID="CFL-bK-ewz">
             <objects>
-                <tableViewController id="xdp-Lp-udS" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GroupsViewController" id="xdp-Lp-udS" customClass="GroupsViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Plw-HX-Hka">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,13 +31,35 @@
                             <outlet property="delegate" destination="xdp-Lp-udS" id="Rmx-cr-b4K"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="3dt-ec-WrX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fw7-je-uHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="87"/>
+            <point key="canvasLocation" x="1055.072463768116" y="86.383928571428569"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="fL5-hs-28U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LOe-pc-YVy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Groups" image="person.2" catalog="system" id="fT9-CM-Zw7"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="obi-cf-K1B">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xdp-Lp-udS" kind="relationship" relationship="rootViewController" id="sea-CJ-DgD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gg9-B5-PZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.92753623188406" y="86.383928571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="person.2" catalog="system" width="128" height="81"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
