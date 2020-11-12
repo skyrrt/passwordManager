@@ -23,9 +23,5 @@ class WelcomeViewController: UIViewController {
         super.viewWillDisappear(true)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
-    
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-
-    }
 
 }
