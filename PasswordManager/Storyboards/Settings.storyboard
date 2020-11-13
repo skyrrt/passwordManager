@@ -12,10 +12,20 @@
         <!--Settings-->
         <scene sceneID="otO-Dv-iX0">
             <objects>
-                <viewController id="PyG-O4-dDr" sceneMemberID="viewController">
+                <viewController id="PyG-O4-dDr" customClass="SettingsViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TEi-te-1Up">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S22-Nn-5HT">
+                                <rect key="frame" x="179" y="433" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="signOutTapped:" destination="PyG-O4-dDr" eventType="touchUpInside" id="svd-YM-Xk1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9of-na-MUh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>

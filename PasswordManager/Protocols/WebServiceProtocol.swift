@@ -10,8 +10,8 @@ import Foundation
 
 protocol WebServiceProtocol {
     
-    func createPassword(withName: String, password: String, login: String)
+    func createPassword(withName: String, password: String, login: String, group: Group?)
     
-    func fetchPasswords(completion: @escaping ([PasswordDetails]) -> Void)
+    func fetchPasswords(completion: @escaping ([PasswordDetails], WSResult) -> Void)
     
 }

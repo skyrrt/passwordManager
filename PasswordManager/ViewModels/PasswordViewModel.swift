@@ -10,6 +10,9 @@ import Foundation
 import RxSwift
 import RxRelay
 
+enum FetchError: Error {
+    case error
+}
 
 class PasswordViewModel: PasswordViewModelProtocol {
     
@@ -20,17 +23,24 @@ class PasswordViewModel: PasswordViewModelProtocol {
         self.webService = webService
     }
     
-    func createPassword(withName name: String, password: String, login: String) {
-        webService.createPassword(withName: name, password: password, login: login)
+    func createPassword(withName name: String, password: String, login: String, group: Group?) {
+        webService.createPassword(withName: name, password: password, login: login, group: group)
     }
     
     func fetchGroupPasswords() {
         passwordCollection.accept([])
     }
     
-    func fetchPasswords() {
+    func fetchPasswords() throws -> Void {
         webService.fetchPasswords(completion: {
-            passwords in self.passwordCollection.accept(passwords)
+            passwords, result in
+            switch(result) {
+            case .success:
+                self.passwordCollection.accept(passwords)
+            case .error:
+                throw FetchError.error
+            }
+            
         })
     }
 }

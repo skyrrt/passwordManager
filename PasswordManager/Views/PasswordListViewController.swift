@@ -32,21 +32,6 @@ class PasswordListViewController: UIViewController {
     @IBAction func addPasswordClicked(_ sender: UIButton) {
         self.performSegue(withIdentifier: "createNewPasswordSegue", sender: nil)
     }
-        
-    @IBAction func menuButtonTapped() {
-        print("MENU")
-    }
-    
-    
-    func signOut() {
-        do {
-            try Auth.auth().signOut()
-            self.navigationController?.popToRootViewController(animated: true)
-            
-        } catch (let error) {
-            print("Auth sign out failed: \(error)")
-        }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createNewPasswordSegue" {
@@ -73,7 +58,6 @@ extension PasswordListViewController: UITableViewDataSource {
         cell.vendorNameLabel.text = cell.passwordDetails.vendorName
         return cell
     }
-    
     
 }
 

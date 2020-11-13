@@ -23,6 +23,10 @@
 		FA2BA4B9255D7D920019D062 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2BA4B8255D7D920019D062 /* Settings.storyboard */; };
 		FA2BA4BC255D7E9F0019D062 /* GroupPasswords.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2BA4BB255D7E9F0019D062 /* GroupPasswords.storyboard */; };
 		FA2BA4D7255DC2E80019D062 /* TabsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2BA4D6255DC2E80019D062 /* TabsController.swift */; };
+		FA39277B255EB6BA00AA4729 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39277A255EB6BA00AA4729 /* SettingsViewController.swift */; };
+		FA392795255EC14A00AA4729 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA392794255EC14A00AA4729 /* Group.swift */; };
+		FA392798255ED6D500AA4729 /* SharedPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA392797255ED6D500AA4729 /* SharedPasswordViewModel.swift */; };
+		FA39279B255ED6E600AA4729 /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39279A255ED6E600AA4729 /* GroupsViewModel.swift */; };
 		FA51D4DB24DB048200276410 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51D4DA24DB048200276410 /* SignInViewModel.swift */; };
 		FA953A6924EC7E4A005AA175 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA953A6824EC7E4A005AA175 /* PasswordViewModel.swift */; };
 		FA9801AA24A3A82600E2D44E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9801A924A3A82600E2D44E /* AppDelegate.swift */; };
@@ -61,6 +65,10 @@
 		FA2BA4B8255D7D920019D062 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		FA2BA4BB255D7E9F0019D062 /* GroupPasswords.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupPasswords.storyboard; sourceTree = "<group>"; };
 		FA2BA4D6255DC2E80019D062 /* TabsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsController.swift; sourceTree = "<group>"; };
+		FA39277A255EB6BA00AA4729 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FA392794255EC14A00AA4729 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		FA392797255ED6D500AA4729 /* SharedPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPasswordViewModel.swift; sourceTree = "<group>"; };
+		FA39279A255ED6E600AA4729 /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
 		FA51D4DA24DB048200276410 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		FA953A6824EC7E4A005AA175 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		FA9801A624A3A82600E2D44E /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +204,7 @@
 				FA0FD89C25507DFC00B7394D /* GroupsViewController.swift */,
 				FA0FD89F25507E0C00B7394D /* AppInfoViewController.swift */,
 				FA2BA4D6255DC2E80019D062 /* TabsController.swift */,
+				FA39277A255EB6BA00AA4729 /* SettingsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +214,7 @@
 			children = (
 				FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */,
 				FAEE44F824BCC94D0039B25D /* User.swift */,
+				FA392794255EC14A00AA4729 /* Group.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +225,8 @@
 				FAEE44F624BCC8C10039B25D /* SignUpViewModel.swift */,
 				FA51D4DA24DB048200276410 /* SignInViewModel.swift */,
 				FA953A6824EC7E4A005AA175 /* PasswordViewModel.swift */,
+				FA392797255ED6D500AA4729 /* SharedPasswordViewModel.swift */,
+				FA39279A255ED6E600AA4729 /* GroupsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -351,8 +363,10 @@
 				FAE4F22B24B79C6500CA80A9 /* SignUpViewController.swift in Sources */,
 				FA953A6924EC7E4A005AA175 /* PasswordViewModel.swift in Sources */,
 				FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */,
+				FA392795255EC14A00AA4729 /* Group.swift in Sources */,
 				FAE4F22924B79C5500CA80A9 /* WelcomeViewController.swift in Sources */,
 				FAEE44F724BCC8C10039B25D /* SignUpViewModel.swift in Sources */,
+				FA39279B255ED6E600AA4729 /* GroupsViewModel.swift in Sources */,
 				FA9801AE24A3A82600E2D44E /* PasswordListViewController.swift in Sources */,
 				FA0FD8A025507E0C00B7394D /* AppInfoViewController.swift in Sources */,
 				FA1A6E6A24E2F75A002ECCA2 /* ModifyPasswordViewController.swift in Sources */,
@@ -369,8 +383,10 @@
 				FA2038CA2520950F00FC30B0 /* WebServiceProtocol.swift in Sources */,
 				FA9801AA24A3A82600E2D44E /* AppDelegate.swift in Sources */,
 				FA9801AC24A3A82600E2D44E /* SceneDelegate.swift in Sources */,
+				FA392798255ED6D500AA4729 /* SharedPasswordViewModel.swift in Sources */,
 				FA2038CC2520999E00FC30B0 /* WebService.swift in Sources */,
 				FA51D4DB24DB048200276410 /* SignInViewModel.swift in Sources */,
+				FA39277B255EB6BA00AA4729 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

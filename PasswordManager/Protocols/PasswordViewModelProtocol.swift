@@ -18,9 +18,9 @@ protocol PasswordViewModelProtocol {
     
     init(webService: WebServiceProtocol)
     
-    func fetchPasswords()
+    func fetchPasswords() throws -> Void
     
-    func fetchGroupPasswords()
+    func fetchGroupPasswords() throws -> Void
     
-    func createPassword(withName name: String, password: String, login: String)
+    func createPassword(withName name: String, password: String, login: String, group: Group?)
 }
