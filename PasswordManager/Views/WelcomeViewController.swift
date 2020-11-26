@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class WelcomeViewController: UIViewController {
     
@@ -17,6 +18,11 @@ class WelcomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        do {
+            try Auth.auth().signOut()
+            } catch let err {
+                print(err)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

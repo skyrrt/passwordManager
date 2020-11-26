@@ -6,9 +6,7 @@ target 'PasswordManager' do
   use_frameworks!
 
   # Pods for PasswordManager
-  pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
-  pod 'FirebaseFirestoreSwift'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxRelay'

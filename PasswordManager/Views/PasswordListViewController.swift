@@ -20,7 +20,7 @@ class PasswordListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTableView.dataSource = self
-        passwordViewModel = PasswordViewModel(webService: WebService())
+        passwordViewModel = PasswordViewModel()
         passwordViewModel?.passwordCollection.asObservable()
             .subscribe(onNext: { [weak self] _ in
                 self?.repopulateView()
@@ -42,7 +42,9 @@ class PasswordListViewController: UIViewController {
     }
     
     func repopulateView() {
-        self.passwordTableView.reloadData()
+        DispatchQueue.main.async {
+            self.passwordTableView.reloadData()
+        }
     }
     
 }

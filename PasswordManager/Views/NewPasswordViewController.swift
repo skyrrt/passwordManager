@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import Firebase
 
 class NewPasswordViewController: UIViewController {
     
@@ -48,7 +49,8 @@ class NewPasswordViewController: UIViewController {
             self.present(alert, animated: true)
             return
         }
-        passwordViewModel?.createPassword(withName: passName, password: pass, login: login, group: selectedGroup)
+        let passwordDetails = PasswordDetails(id: nil, vendorName: passName, passwordHash: pass, userAccount: login, userId: Auth.auth().currentUser!.uid, groupId: selectedGroup?.id)
+        passwordViewModel?.createPassword(passwordDetails: passwordDetails)
         passwordViewModel?.fetchPasswords()
         dismiss(animated: false, completion: nil)
     }

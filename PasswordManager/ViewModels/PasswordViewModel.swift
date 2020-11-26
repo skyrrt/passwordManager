@@ -17,30 +17,19 @@ enum FetchError: Error {
 class PasswordViewModel: PasswordViewModelProtocol {
     
     var passwordCollection = BehaviorRelay<[PasswordDetails]>(value: [PasswordDetails]())
-    var webService: WebServiceProtocol
+    var webService = PasswordApiService()
     
-    required init(webService: WebServiceProtocol) {
-        self.webService = webService
-    }
     
-    func createPassword(withName name: String, password: String, login: String, group: Group?) {
-        webService.createPassword(withName: name, password: password, login: login, group: group)
+    func createPassword(passwordDetails: PasswordDetails) {
+        webService.postNewPassword(password: passwordDetails)
     }
     
     func fetchGroupPasswords() {
-        passwordCollection.accept([])
     }
     
-    func fetchPasswords() throws -> Void {
-        webService.fetchPasswords(completion: {
-            passwords, result in
-            switch(result) {
-            case .success:
-                self.passwordCollection.accept(passwords)
-            case .error:
-                throw FetchError.error
-            }
-            
+    func fetchPasswords() -> Void {
+        webService.fetchMyPasswords(completion: {
+            passwords in self.passwordCollection.accept(passwords)
         })
     }
 }

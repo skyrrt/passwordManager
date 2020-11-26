@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XGP-uM-ghL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XGP-uM-ghL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,6 +13,7 @@
         <scene sceneID="vRW-8h-ebf">
             <objects>
                 <tabBarController id="4FJ-AQ-UZ0" customClass="TabsController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="o8d-2V-0dm"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ekw-VV-9hV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -79,7 +80,6 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signInPressed:" destination="K9W-JC-FsC" eventType="touchUpInside" id="wjV-E6-NLS"/>
-                                    <segue destination="4FJ-AQ-UZ0" kind="show" identifier="LoginToList" id="Abf-xw-hHn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tuk-fl-oob">
@@ -104,6 +104,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="KRB-wF-aLY" id="UcS-Ux-BF4"/>
                         <outlet property="passwordTextField" destination="Ovl-XF-N9h" id="322-li-J14"/>
+                        <segue destination="4FJ-AQ-UZ0" kind="show" identifier="LoginToList" id="0Ix-Dx-xN2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ub-UI-Yr5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -128,6 +129,9 @@
                                 <rect key="frame" x="179" y="612" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <segue destination="aAV-y2-jor" kind="show" id="54x-jy-l6b"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-UZ-O8f">
                                 <rect key="frame" x="184" y="690" width="47" height="30"/>
@@ -147,9 +151,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YhR-oT-4bc"/>
-                    <connections>
-                        <segue destination="aAV-y2-jor" kind="show" id="KfG-N5-GEf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsG-1h-NCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,7 +170,6 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUpPressed:" destination="aAV-y2-jor" eventType="touchUpInside" id="xne-ak-7VU"/>
-                                    <segue destination="4FJ-AQ-UZ0" kind="show" identifier="RegisterToList" id="cd1-gD-AOh"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2dB-WH-CxV">
@@ -220,6 +220,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="ZPX-52-1pw" id="1F9-IJ-B3T"/>
                         <outlet property="passwordTextField" destination="vts-IW-Z20" id="Leh-lS-Pi1"/>
+                        <segue destination="4FJ-AQ-UZ0" kind="show" identifier="RegisterToList" id="8ON-lz-pD8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSk-2K-ZJM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -298,7 +299,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cd1-gD-AOh"/>
+        <segue reference="0Ix-Dx-xN2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

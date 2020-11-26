@@ -14,13 +14,9 @@ protocol PasswordViewModelProtocol {
     
     var passwordCollection: BehaviorRelay<[PasswordDetails]> {get}
     
-    var webService: WebServiceProtocol {get}
+    func fetchPasswords() -> Void
     
-    init(webService: WebServiceProtocol)
+    func fetchGroupPasswords() -> Void
     
-    func fetchPasswords() throws -> Void
-    
-    func fetchGroupPasswords() throws -> Void
-    
-    func createPassword(withName name: String, password: String, login: String, group: Group?)
+    func createPassword(passwordDetails: PasswordDetails)
 }
