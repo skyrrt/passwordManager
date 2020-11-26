@@ -10,26 +10,25 @@ import Foundation
 import RxSwift
 import RxRelay
 
+enum FetchError: Error {
+    case error
+}
 
 class PasswordViewModel: PasswordViewModelProtocol {
     
     var passwordCollection = BehaviorRelay<[PasswordDetails]>(value: [PasswordDetails]())
-    var webService: WebServiceProtocol
+    var webService = PasswordApiService()
     
-    required init(webService: WebServiceProtocol) {
-        self.webService = webService
-    }
     
-    func createPassword(withName name: String, password: String, login: String) {
-        webService.createPassword(withName: name, password: password, login: login)
+    func createPassword(passwordDetails: PasswordDetails) {
+        webService.postNewPassword(password: passwordDetails)
     }
     
     func fetchGroupPasswords() {
-        passwordCollection.accept([])
     }
     
-    func fetchPasswords() {
-        webService.fetchPasswords(completion: {
+    func fetchPasswords() -> Void {
+        webService.fetchMyPasswords(completion: {
             passwords in self.passwordCollection.accept(passwords)
         })
     }

@@ -11,13 +11,18 @@ import FirebaseAuth
 
 class SignUpViewModel: SignUpViewModelProtocol {
     
+    var webService = UserApiService()
+    
     func registerUser(userName: String?, password: String?, completion: @escaping (SignUpResult) -> ()) {
         if let user = userName, let pass = password {
             Auth.auth().createUser(withEmail: user, password: pass) { (authData, error) in
                 if let e = error {
                      completion(SignUpResult.error(e))
                 } else {
+                    self.webService.postNewUser(user: UserDto(uid: authData!.user.uid, email: user))
+                    print("POST ")
                     Auth.auth().signIn(withEmail: user, password: pass)
+                    
                 }
             }
         }

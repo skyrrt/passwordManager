@@ -9,26 +9,21 @@
 import Foundation
 
 class PasswordDetails: Codable {
+    let id: String?
     let vendorName: String
     let passwordHash: String
     let userAccount: String
-    let createdBy: String
+    let userId: String
     let groupId: String?
     
-    init(vendorName: String, passwordHash: String, userAccount: String, createdBy: String, groupId: String?){
+    init(id: String?, vendorName: String, passwordHash: String, userAccount: String, userId: String, groupId: String?){
         self.vendorName = vendorName
         self.passwordHash = passwordHash
         self.userAccount = userAccount
-        self.createdBy = createdBy
+        self.userId = userId
         self.groupId = groupId
+        self.id = id
     }
     
-    enum CodingKeys: String, CodingKey {
-        case vendorName
-        case passwordHash
-        case userAccount
-        case createdBy
-        case groupId
-    }
     
 }
