@@ -13,7 +13,8 @@ class PasswordTableViewCell: UITableViewCell {
     @IBOutlet weak var vendorNameLabel: UILabel!
     @IBOutlet weak var copyButton: UIButton!
     @IBOutlet weak var detailsButton: UIButton!
-    var passwordDetails: PasswordDetails!
+    let pasteboard = UIPasteboard.general
+    var passwordDetails: PasswordDetails?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +32,7 @@ class PasswordTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func copyTapped(_ sender: UIButton) {
-        print("copy")
+        pasteboard.string = passwordDetails!.passwordHash
     }
     
     @IBAction func detailsTapped(_ sender: UIButton) {

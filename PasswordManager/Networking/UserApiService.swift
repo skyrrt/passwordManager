@@ -14,7 +14,7 @@ class UserApiService {
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
     
-    func postNewUser(user: UserDto) {
+    func postNewUser(user: UserDto, completion: @escaping () -> Void ){
         var request = URLRequest(url: URL(string: urlString + "/users")!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -29,6 +29,7 @@ class UserApiService {
             if let jsonResponse = try? self.decoder.decode(UserDto.self, from: responseData) {
                 print(jsonResponse)
             }
+            completion()
         }
         task.resume()
     }

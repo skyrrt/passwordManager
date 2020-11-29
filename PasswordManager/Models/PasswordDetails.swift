@@ -10,11 +10,11 @@ import Foundation
 
 class PasswordDetails: Codable {
     let id: String?
-    let vendorName: String
-    let passwordHash: String
-    let userAccount: String
+    var vendorName: String
+    var passwordHash: String
+    var userAccount: String
     let userId: String
-    let groupId: String?
+    var groupId: String?
     
     init(id: String?, vendorName: String, passwordHash: String, userAccount: String, userId: String, groupId: String?){
         self.vendorName = vendorName

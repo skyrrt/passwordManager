@@ -19,9 +19,9 @@ class SignUpViewModel: SignUpViewModelProtocol {
                 if let e = error {
                      completion(SignUpResult.error(e))
                 } else {
-                    self.webService.postNewUser(user: UserDto(uid: authData!.user.uid, email: user))
-                    print("POST ")
-                    Auth.auth().signIn(withEmail: user, password: pass)
+                    self.webService.postNewUser(user: UserDto(uid: authData!.user.uid, email: user)) {
+                        Auth.auth().signIn(withEmail: user, password: pass)
+                    }
                     
                 }
             }

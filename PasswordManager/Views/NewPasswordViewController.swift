@@ -31,11 +31,14 @@ class NewPasswordViewController: UIViewController {
     }
     
     @IBAction func generatePressed(_ sender: UIButton) {
+        let generatedPassword = randomString(length: 13)
+        passwordTextField.text = generatedPassword
+        repPasswordTextFIeld.text = generatedPassword
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
         guard
-            let passName = passwordTextField.text,
+            let passName = passNameTextField.text,
             let login = loginTextField.text,
             let pass = passwordTextField.text,
             let repPass = repPasswordTextFIeld.text,
@@ -63,6 +66,11 @@ class NewPasswordViewController: UIViewController {
               guard let _ = self else { return }
               sender.setTitle(item, for: .normal) //9
             }
+    }
+    
+    func randomString(length: Int) -> String {
+      let letters = "abcdefghijklmnprsquwxyzABCDEFGHIJKMNPLRSQUW,./;'[]<>?:|{}()0123456789"
+      return String((0..<length).map{ _ in letters.randomElement()! })
     }
     
 }

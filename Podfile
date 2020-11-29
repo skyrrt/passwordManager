@@ -11,4 +11,5 @@ target 'PasswordManager' do
   pod 'RxCocoa'
   pod 'RxRelay'
   pod 'DropDown'
+  pod 'CryptoSwift'
 end
