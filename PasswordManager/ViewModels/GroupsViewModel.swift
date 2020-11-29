@@ -13,12 +13,17 @@ import RxRelay
 class GroupsViewModel {
     var groupsCollection = BehaviorRelay<[GroupDetails]>(value: [GroupDetails]())
     var groupRequests = BehaviorRelay<[GroupRequestDetails]>(value: [GroupRequestDetails]())
+    let groupsApi = GroupsApiService()
     
     
     func createGroup(group: Group) -> Void {
+        groupsApi.createGroup(groupDto: group)
     }
     
     func fetchGroups() {
+        groupsApi.fetchMyGroups(completion: {
+            groups in self.groupsCollection.accept(groups)
+        })
     }
     
 }

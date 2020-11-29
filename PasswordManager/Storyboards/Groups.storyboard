@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,13 +17,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="apG-X8-EQo">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupTableViewCell" id="apG-X8-EQo" customClass="GroupsTableViewCell" customModule="PasswordManager" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="apG-X8-EQo" id="1Sk-zr-lG0">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRX-eu-MiO">
+                                            <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJP-S1-Pmj">
+                                            <rect key="frame" x="351" y="6" width="40" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Leave"/>
+                                            <connections>
+                                                <action selector="leaveButtonTapped:" destination="apG-X8-EQo" eventType="touchUpInside" id="CbT-fS-f6z"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jue-mE-N9v">
+                                            <rect key="frame" x="260" y="6" width="65" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Members"/>
+                                            <connections>
+                                                <action selector="membersButtonTapped:" destination="apG-X8-EQo" eventType="touchUpInside" id="yRw-55-2Ug"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfL-jq-Xv1">
+                                            <rect key="frame" x="189" y="6" width="37" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Invite"/>
+                                        </button>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="groupName" destination="XRX-eu-MiO" id="Age-lQ-j2w"/>
+                                    <outlet property="leaveButton" destination="gJP-S1-Pmj" id="0j6-3L-hnh"/>
+                                    <outlet property="membersButton" destination="jue-mE-N9v" id="73O-nN-k97"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -41,79 +75,65 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="SMR-m3-jHJ" kind="showDetail" identifier="NewGroupSegue" id="sOh-0S-R9K"/>
+                        <outlet property="groupsTableView" destination="Plw-HX-Hka" id="e5q-Nq-QpW"/>
+                        <segue destination="2Fm-5P-MWu" kind="show" identifier="GroupMembersSegue" id="KFD-tr-VQd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fw7-je-uHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055.072463768116" y="86.383928571428569"/>
         </scene>
-        <!--New Group View Controller-->
-        <scene sceneID="5WG-cq-rt6">
+        <!--Group Members View Controller-->
+        <scene sceneID="PSY-EI-Fhc">
             <objects>
-                <viewController id="SMR-m3-jHJ" customClass="NewGroupViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hjj-e7-KYW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <tableViewController id="2Fm-5P-MWu" customClass="GroupMembersViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sAO-Ww-xoH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="c2M-RM-gIP">
-                                <rect key="frame" x="30" y="140" width="354" height="598"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmQ-DN-A8f">
-                                        <rect key="frame" x="130" y="0.0" width="94" height="53"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N20-H0-0kt">
-                                        <rect key="frame" x="20" y="136" width="314" height="53.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rku-4i-Rfd">
-                                        <rect key="frame" x="108.5" y="272.5" width="137" height="53"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8if-LF-t9S">
-                                        <rect key="frame" x="20" y="408.5" width="314" height="53.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4Y-KX-cHJ">
-                                        <rect key="frame" x="162" y="545" width="30" height="53"/>
-                                        <state key="normal" title="Add"/>
-                                        <connections>
-                                            <action selector="addButtonTapped:" destination="SMR-m3-jHJ" eventType="touchUpInside" id="Zz3-WK-ewS"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8if-LF-t9S" secondAttribute="trailing" constant="20" id="I4n-bC-M22"/>
-                                    <constraint firstItem="8if-LF-t9S" firstAttribute="leading" secondItem="c2M-RM-gIP" secondAttribute="leading" constant="20" id="Omg-ea-ykj"/>
-                                    <constraint firstAttribute="trailing" secondItem="N20-H0-0kt" secondAttribute="trailing" constant="20" id="R7h-UO-Euq"/>
-                                    <constraint firstItem="N20-H0-0kt" firstAttribute="leading" secondItem="c2M-RM-gIP" secondAttribute="leading" constant="20" id="lwT-Fh-46B"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="JC5-0b-mbt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="c2M-RM-gIP" firstAttribute="top" secondItem="JC5-0b-mbt" secondAttribute="top" constant="140" id="Zbl-gY-eQE"/>
-                            <constraint firstItem="c2M-RM-gIP" firstAttribute="leading" secondItem="JC5-0b-mbt" secondAttribute="leading" constant="30" id="fT7-4N-JaK"/>
-                            <constraint firstItem="JC5-0b-mbt" firstAttribute="trailing" secondItem="c2M-RM-gIP" secondAttribute="trailing" constant="30" id="fe8-9J-uL5"/>
-                            <constraint firstItem="JC5-0b-mbt" firstAttribute="bottom" secondItem="c2M-RM-gIP" secondAttribute="bottom" constant="70" id="g4c-yu-Psy"/>
-                        </constraints>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Gwu-uN-f9N" customClass="UserMembersCell" customModule="PasswordManager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gwu-uN-f9N" id="seL-Hs-2oH">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54i-gw-DLA">
+                                            <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFI-yw-oRg">
+                                            <rect key="frame" x="235" y="6" width="159" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Delete user from group"/>
+                                            <connections>
+                                                <action selector="deleteUserTapped:" destination="Gwu-uN-f9N" eventType="touchUpInside" id="oZk-Qc-Osd"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mailLabel" destination="54i-gw-DLA" id="ZYy-Wt-Zlb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2Fm-5P-MWu" id="Zpf-P6-JrI"/>
+                            <outlet property="delegate" destination="2Fm-5P-MWu" id="TPd-h7-ljy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rjG-DA-6la"/>
                     <connections>
-                        <outlet property="descriptionTextField" destination="8if-LF-t9S" id="xel-oA-IbN"/>
-                        <outlet property="nameTextField" destination="N20-H0-0kt" id="6gf-4k-gjc"/>
+                        <outlet property="usersTableView" destination="sAO-Ww-xoH" id="auc-Nt-qKh"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h3V-0J-J6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecy-yt-BBi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2267" y="86"/>
+            <point key="canvasLocation" x="2247" y="90"/>
         </scene>
         <!--Groups-->
         <scene sceneID="fL5-hs-28U">

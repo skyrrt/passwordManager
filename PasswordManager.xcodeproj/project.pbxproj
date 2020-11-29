@@ -34,13 +34,16 @@
 		FA9801B124A3A82600E2D44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9801AF24A3A82600E2D44E /* Main.storyboard */; };
 		FA9801B324A3A82700E2D44E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA9801B224A3A82700E2D44E /* Assets.xcassets */; };
 		FA9801B624A3A82700E2D44E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9801B424A3A82700E2D44E /* LaunchScreen.storyboard */; };
+		FA9A2B2F2574575F00CB75DC /* GroupMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2B2E2574575F00CB75DC /* GroupMembersViewController.swift */; };
+		FA9A2B3225745A7A00CB75DC /* UserMembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2B3125745A7A00CB75DC /* UserMembersCell.swift */; };
 		FA9FB637256EEB4A006982DE /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB636256EEB4A006982DE /* UserApiService.swift */; };
 		FA9FB63A256EEB86006982DE /* UserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB639256EEB86006982DE /* UserDto.swift */; };
+		FAC762BF25742C8C006AE9D2 /* GroupsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC762BE25742C8C006AE9D2 /* GroupsApiService.swift */; };
+		FAC762C325743310006AE9D2 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC762C225743310006AE9D2 /* UserDetails.swift */; };
+		FAC762C6257437AC006AE9D2 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC762C5257437AC006AE9D2 /* GroupsTableViewCell.swift */; };
 		FAC802E7256199D4000DDAB5 /* GroupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC802E6256199D4000DDAB5 /* GroupRequest.swift */; };
 		FAC802EA25619AD9000DDAB5 /* GroupRequestDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC802E925619AD9000DDAB5 /* GroupRequestDetails.swift */; };
 		FAC802ED25619EC0000DDAB5 /* GroupDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC802EC25619EC0000DDAB5 /* GroupDetails.swift */; };
-		FAC802F025619F56000DDAB5 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC802EF25619F56000DDAB5 /* UserDetails.swift */; };
-		FAC802F32561A4EA000DDAB5 /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC802F22561A4EA000DDAB5 /* NewGroupViewController.swift */; };
 		FAC802F72561AD77000DDAB5 /* GroupMembershipRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC802F62561AD77000DDAB5 /* GroupMembershipRequest.swift */; };
 		FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */; };
 		FAE4F21B24B237E800CA80A9 /* PasswordDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */; };
@@ -49,7 +52,7 @@
 		FAE4F22924B79C5500CA80A9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22824B79C5500CA80A9 /* WelcomeViewController.swift */; };
 		FAE4F22B24B79C6500CA80A9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22A24B79C6500CA80A9 /* SignUpViewController.swift */; };
 		FAE4F22D24B79C7300CA80A9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4F22C24B79C7300CA80A9 /* SignInViewController.swift */; };
-		FAEE44F724BCC8C10039B25D /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44F624BCC8C10039B25D /* SignUpViewModel.swift */; };
+		FAEE44F724BCC8C10039B25D /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44F624BCC8C10039B25D /* UserViewModel.swift */; };
 		FAEE44F924BCC94D0039B25D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44F824BCC94D0039B25D /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,28 +83,31 @@
 		FA9801A624A3A82600E2D44E /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA9801A924A3A82600E2D44E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA9801AB24A3A82600E2D44E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA9801AD24A3A82600E2D44E /* PasswordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordListViewController.swift; path = PasswordManager/Views/PasswordListViewController.swift; sourceTree = SOURCE_ROOT; };
+		FA9801AD24A3A82600E2D44E /* PasswordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordListViewController.swift; path = PasswordManager/Views/Passwords/PasswordListViewController.swift; sourceTree = SOURCE_ROOT; };
 		FA9801B024A3A82600E2D44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA9801B224A3A82700E2D44E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA9801B524A3A82700E2D44E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA9801B724A3A82700E2D44E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA9801C024A3AA9700E2D44E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = PasswordManager/.gitignore; sourceTree = "<group>"; };
+		FA9A2B2E2574575F00CB75DC /* GroupMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembersViewController.swift; sourceTree = "<group>"; };
+		FA9A2B3125745A7A00CB75DC /* UserMembersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMembersCell.swift; sourceTree = "<group>"; };
 		FA9FB636256EEB4A006982DE /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		FA9FB639256EEB86006982DE /* UserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDto.swift; sourceTree = "<group>"; };
+		FAC762BE25742C8C006AE9D2 /* GroupsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsApiService.swift; sourceTree = "<group>"; };
+		FAC762C225743310006AE9D2 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		FAC762C5257437AC006AE9D2 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		FAC802E6256199D4000DDAB5 /* GroupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRequest.swift; sourceTree = "<group>"; };
 		FAC802E925619AD9000DDAB5 /* GroupRequestDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRequestDetails.swift; sourceTree = "<group>"; };
 		FAC802EC25619EC0000DDAB5 /* GroupDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetails.swift; sourceTree = "<group>"; };
-		FAC802EF25619F56000DDAB5 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
-		FAC802F22561A4EA000DDAB5 /* NewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
 		FAC802F62561AD77000DDAB5 /* GroupMembershipRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMembershipRequest.swift; sourceTree = "<group>"; };
-		FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordTableViewCell.swift; path = PasswordManager/Controllers/PasswordTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordTableViewCell.swift; path = PasswordManager/Views/Passwords/PasswordTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		FAE4F21A24B237E800CA80A9 /* PasswordDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDetails.swift; sourceTree = "<group>"; };
 		FAE4F21D24B2418900CA80A9 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		FAE4F22624B5006000CA80A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAE4F22824B79C5500CA80A9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		FAE4F22A24B79C6500CA80A9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAE4F22C24B79C7300CA80A9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		FAEE44F624BCC8C10039B25D /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		FAEE44F624BCC8C10039B25D /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		FAEE44F824BCC94D0039B25D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +145,7 @@
 			children = (
 				FA9FB636256EEB4A006982DE /* UserApiService.swift */,
 				FA49CFC725701923001448AD /* PasswordApiService.swift */,
+				FAC762BE25742C8C006AE9D2 /* GroupsApiService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -208,18 +215,15 @@
 		FA9801C324A3B07100E2D44E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FA9801AD24A3A82600E2D44E /* PasswordListViewController.swift */,
-				FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */,
+				FAC762CA257437C9006AE9D2 /* Groups */,
+				FAC762C9257437C2006AE9D2 /* SharedPasswords */,
+				FAC762C8257437BA006AE9D2 /* Passwords */,
 				FAE4F22824B79C5500CA80A9 /* WelcomeViewController.swift */,
 				FAE4F22A24B79C6500CA80A9 /* SignUpViewController.swift */,
 				FAE4F22C24B79C7300CA80A9 /* SignInViewController.swift */,
-				FA1A6E6724E2F73B002ECCA2 /* NewPasswordViewController.swift */,
-				FA1A6E6924E2F75A002ECCA2 /* ModifyPasswordViewController.swift */,
-				FA0FD89C25507DFC00B7394D /* GroupsViewController.swift */,
 				FA0FD89F25507E0C00B7394D /* AppInfoViewController.swift */,
 				FA2BA4D6255DC2E80019D062 /* TabsController.swift */,
 				FA39277A255EB6BA00AA4729 /* SettingsViewController.swift */,
-				FAC802F22561A4EA000DDAB5 /* NewGroupViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,9 +237,9 @@
 				FAC802E6256199D4000DDAB5 /* GroupRequest.swift */,
 				FAC802E925619AD9000DDAB5 /* GroupRequestDetails.swift */,
 				FAC802EC25619EC0000DDAB5 /* GroupDetails.swift */,
-				FAC802EF25619F56000DDAB5 /* UserDetails.swift */,
 				FAC802F62561AD77000DDAB5 /* GroupMembershipRequest.swift */,
 				FA9FB639256EEB86006982DE /* UserDto.swift */,
+				FAC762C225743310006AE9D2 /* UserDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,13 +247,42 @@
 		FA9801C624A3B1D300E2D44E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				FAEE44F624BCC8C10039B25D /* SignUpViewModel.swift */,
+				FAEE44F624BCC8C10039B25D /* UserViewModel.swift */,
 				FA51D4DA24DB048200276410 /* SignInViewModel.swift */,
 				FA39279A255ED6E600AA4729 /* GroupsViewModel.swift */,
 				FA953A6824EC7E4A005AA175 /* PasswordViewModel.swift */,
 				FA392797255ED6D500AA4729 /* SharedPasswordViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FAC762C8257437BA006AE9D2 /* Passwords */ = {
+			isa = PBXGroup;
+			children = (
+				FA9801AD24A3A82600E2D44E /* PasswordListViewController.swift */,
+				FAE4F21824B237BE00CA80A9 /* PasswordTableViewCell.swift */,
+				FA1A6E6724E2F73B002ECCA2 /* NewPasswordViewController.swift */,
+				FA1A6E6924E2F75A002ECCA2 /* ModifyPasswordViewController.swift */,
+			);
+			path = Passwords;
+			sourceTree = "<group>";
+		};
+		FAC762C9257437C2006AE9D2 /* SharedPasswords */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedPasswords;
+			sourceTree = "<group>";
+		};
+		FAC762CA257437C9006AE9D2 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				FA0FD89C25507DFC00B7394D /* GroupsViewController.swift */,
+				FAC762C5257437AC006AE9D2 /* GroupsTableViewCell.swift */,
+				FA9A2B2E2574575F00CB75DC /* GroupMembersViewController.swift */,
+				FA9A2B3125745A7A00CB75DC /* UserMembersCell.swift */,
+			);
+			path = Groups;
 			sourceTree = "<group>";
 		};
 		FAE4F21C24B2414F00CA80A9 /* Extensions */ = {
@@ -385,17 +418,19 @@
 				FAE4F22B24B79C6500CA80A9 /* SignUpViewController.swift in Sources */,
 				FA953A6924EC7E4A005AA175 /* PasswordViewModel.swift in Sources */,
 				FAE4F21924B237BE00CA80A9 /* PasswordTableViewCell.swift in Sources */,
+				FA9A2B2F2574575F00CB75DC /* GroupMembersViewController.swift in Sources */,
+				FAC762C325743310006AE9D2 /* UserDetails.swift in Sources */,
 				FA392795255EC14A00AA4729 /* Group.swift in Sources */,
 				FAE4F22924B79C5500CA80A9 /* WelcomeViewController.swift in Sources */,
-				FAEE44F724BCC8C10039B25D /* SignUpViewModel.swift in Sources */,
+				FAEE44F724BCC8C10039B25D /* UserViewModel.swift in Sources */,
 				FA39279B255ED6E600AA4729 /* GroupsViewModel.swift in Sources */,
 				FA9801AE24A3A82600E2D44E /* PasswordListViewController.swift in Sources */,
 				FA0FD8A025507E0C00B7394D /* AppInfoViewController.swift in Sources */,
 				FA1A6E6A24E2F75A002ECCA2 /* ModifyPasswordViewController.swift in Sources */,
 				FA9FB637256EEB4A006982DE /* UserApiService.swift in Sources */,
 				FA1A6E6824E2F73B002ECCA2 /* NewPasswordViewController.swift in Sources */,
+				FA9A2B3225745A7A00CB75DC /* UserMembersCell.swift in Sources */,
 				FA2BA4D7255DC2E80019D062 /* TabsController.swift in Sources */,
-				FAC802F32561A4EA000DDAB5 /* NewGroupViewController.swift in Sources */,
 				FAEE44F924BCC94D0039B25D /* User.swift in Sources */,
 				FA2038C72520943500FC30B0 /* PasswordViewModelProtocol.swift in Sources */,
 				FAC802EA25619AD9000DDAB5 /* GroupRequestDetails.swift in Sources */,
@@ -404,13 +439,14 @@
 				FAE4F21E24B2418900CA80A9 /* UIColorExtensions.swift in Sources */,
 				FAE4F22D24B79C7300CA80A9 /* SignInViewController.swift in Sources */,
 				FA2038C3252092A600FC30B0 /* SignUpViewModelProtocol.swift in Sources */,
+				FAC762BF25742C8C006AE9D2 /* GroupsApiService.swift in Sources */,
 				FAC802E7256199D4000DDAB5 /* GroupRequest.swift in Sources */,
 				FA0FD89D25507DFC00B7394D /* GroupsViewController.swift in Sources */,
 				FA9801AA24A3A82600E2D44E /* AppDelegate.swift in Sources */,
-				FAC802F025619F56000DDAB5 /* UserDetails.swift in Sources */,
 				FA49CFC825701923001448AD /* PasswordApiService.swift in Sources */,
 				FA9801AC24A3A82600E2D44E /* SceneDelegate.swift in Sources */,
 				FA392798255ED6D500AA4729 /* SharedPasswordViewModel.swift in Sources */,
+				FAC762C6257437AC006AE9D2 /* GroupsTableViewCell.swift in Sources */,
 				FA51D4DB24DB048200276410 /* SignInViewModel.swift in Sources */,
 				FAC802F72561AD77000DDAB5 /* GroupMembershipRequest.swift in Sources */,
 				FA9FB63A256EEB86006982DE /* UserDto.swift in Sources */,

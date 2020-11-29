@@ -16,9 +16,4 @@ class GroupMembershipRequest: Codable {
         self.userId = userId
         self.groupId = groupId
     }
-    
-    enum CodingKeys: String, CodingKey {
-        case userId
-        case groupId
-    }
 }

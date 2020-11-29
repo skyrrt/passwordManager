@@ -10,4 +10,5 @@ import Foundation
 
 protocol SignUpViewModelProtocol {
     func registerUser(userName: String?, password: String?, completion: @escaping (SignUpResult) -> ())
+    func deleteUser()
 }

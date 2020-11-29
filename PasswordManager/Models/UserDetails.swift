@@ -2,25 +2,20 @@
 //  UserDetails.swift
 //  PasswordManager
 //
-//  Created by Bartek Rzyszkiewicz on 15/11/2020.
+//  Created by Bartek Rzyszkiewicz on 29/11/2020.
 //  Copyright © 2020 Bartek Rzyszkiewicz. All rights reserved.
 //
 
 import Foundation
 
 class UserDetails: Codable {
-    var id: String
-    var mail: String
+    let id: String
+    let email: String
+    let uid: String
     
-    init(id: String, mail: String) {
+    init(id: String, email: String, uid: String) {
         self.id = id
-        self.mail = mail
+        self.email = email
+        self.uid = uid
     }
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case mail
-    }
-    
-    
 }

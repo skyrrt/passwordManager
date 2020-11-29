@@ -10,11 +10,12 @@ import UIKit
 import FirebaseAuth
 
 class SettingsViewController: UIViewController {
+    
+    var userViewModel: UserViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        userViewModel = UserViewModel()
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
@@ -30,15 +31,14 @@ class SettingsViewController: UIViewController {
             print("Auth sign out failed: \(error)")
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func deleteAccountTapped(_ sender: UIButton) {
+        Auth.auth().currentUser?.delete(completion: {
+            error in
+            if error != nil {
+                print("Error while deleting account")
+            }
+            self.userViewModel?.deleteUser()
+        })
     }
-    */
 
 }

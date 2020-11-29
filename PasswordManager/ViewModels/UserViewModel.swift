@@ -8,10 +8,12 @@
 
 import Foundation
 import FirebaseAuth
+import RxRelay
 
-class SignUpViewModel: SignUpViewModelProtocol {
+class UserViewModel: SignUpViewModelProtocol {
     
     var webService = UserApiService()
+    var groupUsersCollection = BehaviorRelay<[UserDetails]>(value: [UserDetails]())
     
     func registerUser(userName: String?, password: String?, completion: @escaping (SignUpResult) -> ()) {
         if let user = userName, let pass = password {
@@ -25,6 +27,16 @@ class SignUpViewModel: SignUpViewModelProtocol {
                     
                 }
             }
+        }
+    }
+    
+    func deleteUser() {
+        webService.deleteAccount()
+    }
+    
+    func fetchGroupUsers(groupId: String) {
+        webService.fetchGroupUsers(groupId: groupId) {
+            users in self.groupUsersCollection.accept(users)
         }
     }
 }

@@ -14,15 +14,14 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var signUpViewModel: SignUpViewModel?
+    var signUpViewModel: UserViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpViewModel = SignUpViewModel.init()
+        signUpViewModel = UserViewModel.init()
         
         Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                print(user.email)
+            if user != nil {
                 self.performSegue(withIdentifier: "RegisterToList", sender: nil)
                 self.emailTextField.text = nil
                 self.passwordTextField.text = nil

@@ -16,7 +16,7 @@ class NewPasswordViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repPasswordTextFIeld: UITextField!
-    var selectedGroup: Group?
+    var selectedGroup: GroupDetails?
     var passwordViewModel: PasswordViewModelProtocol?
     let dropDown = DropDown()
     
