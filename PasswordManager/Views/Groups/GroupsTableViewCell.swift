@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class GroupsTableViewCell: UITableViewCell {
     
     var groupDetails: GroupDetails?
+    var delegate: MyCustomCellDelegator!
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var membersButton: UIButton!
     @IBOutlet weak var leaveButton: UIButton!
@@ -19,9 +21,10 @@ class GroupsTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    
     @IBAction func membersButtonTapped(_ sender: UIButton) {
-        
+        if (self.delegate != nil) {
+            self.delegate.callSegueFromCell(myData: groupDetails!.id)
+        }
     }
     
     @IBAction func leaveButtonTapped(_ sender: UIButton) {

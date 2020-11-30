@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import Firebase
 
-class GroupsViewController: UITableViewController {
+class GroupsViewController: UITableViewController, MyCustomCellDelegator {
     
     var groupsViewModel: GroupsViewModel?
     let disposeBag = DisposeBag()
@@ -37,6 +37,14 @@ class GroupsViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GroupMembersSegue" {
+            if let viewController = segue.destination as? GroupMembersViewController {
+                viewController.groupId = sender as? String
+            }
+        }
+    }
+    
     
     func promptForAnswer() {
         let ac = UIAlertController(title: "Enter group name", message: nil, preferredStyle: .alert)
@@ -55,6 +63,10 @@ class GroupsViewController: UITableViewController {
         present(ac, animated: true)
     }
     
+    func callSegueFromCell(myData dataobject: Any) {
+        self.performSegue(withIdentifier: "GroupMembersSegue", sender: dataobject)
+    }
+    
 }
 
 extension GroupsViewController {
@@ -66,6 +78,14 @@ extension GroupsViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableViewCell", for: indexPath) as! GroupsTableViewCell
         cell.groupDetails = groupsViewModel?.groupsCollection.value[indexPath.row]
         cell.groupName.text = cell.groupDetails?.groupName
+        if (Auth.auth().currentUser!.uid != cell.groupDetails?.createdBy) {
+            cell.membersButton.isEnabled = false
+        }
+        cell.delegate = self
         return cell
     }
+}
+
+protocol MyCustomCellDelegator {
+    func callSegueFromCell(myData dataobject: Any)
 }

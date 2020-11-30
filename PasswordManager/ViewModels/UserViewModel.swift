@@ -39,6 +39,10 @@ class UserViewModel: SignUpViewModelProtocol {
             users in self.groupUsersCollection.accept(users)
         }
     }
+    
+    func deleteUserFromGroup(userId: String, groupId: String) {
+        webService.deleteUserFromGroup(userId: userId, groupId: groupId)
+    }
 }
 
 enum SignUpResult {

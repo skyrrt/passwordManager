@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class GroupMembersViewController: UITableViewController {
+class GroupMembersViewController: UITableViewController, ViewRefreshDelegate {
     
     @IBOutlet var usersTableView: UITableView!
     var usersViewModel: UserViewModel?
@@ -28,6 +28,10 @@ class GroupMembersViewController: UITableViewController {
         usersViewModel?.fetchGroupUsers(groupId: groupId!)
     }
     
+    func refreshView() {
+        usersViewModel?.fetchGroupUsers(groupId: groupId!)
+    }
+    
     func repopulateView() {
         DispatchQueue.main.async {
             self.usersTableView.reloadData()
@@ -43,6 +47,12 @@ class GroupMembersViewController: UITableViewController {
         cell.groupId = groupId
         cell.user = usersViewModel?.groupUsersCollection.value[indexPath.row]
         cell.mailLabel.text = cell.user?.email
+        cell.usersViewModel = self.usersViewModel
+        cell.delegate = self
         return cell
     }
+}
+
+protocol ViewRefreshDelegate {
+    func refreshView()
 }

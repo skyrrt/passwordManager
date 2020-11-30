@@ -9,13 +9,13 @@
 import Foundation
 
 class GroupRequest {
-    var requestId: String
+    var id: String?
     var groupId: String
     var userId: String
     
-    init(requestId: String, groupId: String, userId: String) {
+    init(id: String?, groupId: String, userId: String) {
         self.groupId = groupId
-        self.requestId = requestId
+        self.id = id
         self.userId = userId
     }
     

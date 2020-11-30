@@ -42,7 +42,7 @@ class UserApiService {
     }
     
     func fetchGroupUsers(groupId: String, completion: @escaping ([UserDetails]) -> Void) {
-        let url = URL(string: "/groups/users" + "?userUid=\(Auth.auth().currentUser!.uid)" + "&groupId=\(groupId)")!
+        let url = URL(string: urlString + "/groups/users?userUid=\(Auth.auth().currentUser!.uid)&groupId=\(groupId)")!
         let task = urlSession.dataTask(with: url) { data, response, error in
             guard let resData = data, error == nil else {
                 print("REST ERROR GROUP Users FETCH")
@@ -53,5 +53,11 @@ class UserApiService {
             }
         }
         task.resume()
+    }
+    
+    func deleteUserFromGroup(userId: String, groupId: String) {
+        var request = URLRequest(url: URL(string: urlString + "/groups/users?userId=\(userId)&groupId=\(groupId)")!)
+        request.httpMethod = "DELETE"
+        urlSession.dataTask(with: request).resume()
     }
 }
