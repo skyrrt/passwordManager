@@ -32,12 +32,12 @@ class SettingsViewController: UIViewController {
         }
     }
     @IBAction func deleteAccountTapped(_ sender: UIButton) {
+        self.userViewModel?.deleteUser()
         Auth.auth().currentUser?.delete(completion: {
             error in
             if error != nil {
-                print("Error while deleting account")
+                self.navigationController?.popToRootViewController(animated: true)
             }
-            self.userViewModel?.deleteUser()
         })
     }
 

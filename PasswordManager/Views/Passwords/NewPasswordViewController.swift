@@ -16,13 +16,16 @@ class NewPasswordViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repPasswordTextFIeld: UITextField!
+    @IBOutlet weak var groupNameLabel: UILabel!
     var selectedGroup: GroupDetails?
-    var passwordViewModel: PasswordViewModelProtocol?
+    var passwordViewModel: PasswordViewModel?
+    var groupsViewModel: GroupsViewModel?
     let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
+        self.groupNameLabel.text = selectedGroup?.groupName ?? "Not Assigned"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,19 +55,25 @@ class NewPasswordViewController: UIViewController {
             self.present(alert, animated: true)
             return
         }
-        let passwordDetails = PasswordDetails(id: nil, vendorName: passName, passwordHash: pass, userAccount: login, userId: Auth.auth().currentUser!.uid, groupId: selectedGroup?.id)
-        passwordViewModel?.createPassword(passwordDetails: passwordDetails)
-        passwordViewModel?.fetchPasswords()
+        let passwordDetails = PasswordDetails(id: nil, vendorName: passName, passwordHash: pass, userAccount: login, userId: Auth.auth().currentUser!.uid, groupId: selectedGroup?.id, groupName: nil)
+        passwordViewModel?.createPassword(passwordDetails: passwordDetails) {
+            self.passwordViewModel?.fetchPasswords()
+        }
+        
         dismiss(animated: false, completion: nil)
     }
     @IBAction func assignToGroupTapped(_ sender: UIButton) {
-            dropDown.dataSource = ["Tomato soup", "Mini burgers", "Onion rings", "Baked potato", "Salad"]//4
+        var groups = groupsViewModel?.groupsCollection.value
+        groups?.append(GroupDetails(id: nil, groupName: "Not assigned", createdBy: nil))
+        let groupNames = groups!.map({$0.groupName})
+        dropDown.dataSource = groupNames
             dropDown.anchorView = sender //5
             dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
             dropDown.show() //7
             dropDown.selectionAction = { [weak self] (index: Int, item: String) in //8
               guard let _ = self else { return }
-              sender.setTitle(item, for: .normal) //9
+                self?.groupNameLabel.text = item
+                self?.selectedGroup = groups![index]
             }
     }
     

@@ -9,11 +9,11 @@
 import Foundation
 
 class GroupDetails: Codable {
-    let id: String
+    let id: String?
     let groupName: String
-    let createdBy: String
+    let createdBy: String?
     
-    init(id: String, groupName: String, createdBy: String) {
+    init(id: String?, groupName: String, createdBy: String?) {
         self.id = id
         self.groupName = groupName
         self.createdBy = createdBy

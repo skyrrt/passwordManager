@@ -40,8 +40,10 @@ class UserViewModel: SignUpViewModelProtocol {
         }
     }
     
-    func deleteUserFromGroup(userId: String, groupId: String) {
-        webService.deleteUserFromGroup(userId: userId, groupId: groupId)
+    func deleteUserFromGroup(userId: String, groupId: String, completion: @escaping () -> Void) {
+        webService.deleteUserFromGroup(userId: userId, groupId: groupId) {
+            completion()
+        }
     }
 }
 

@@ -16,10 +16,11 @@ enum CryptoResponse {
     case response(String)
 }
 
-class PasswordViewModel: PasswordViewModelProtocol {
+class PasswordViewModel {
     
     
     var passwordCollection = BehaviorRelay<[PasswordDetails]>(value: [PasswordDetails]())
+    var sharedPasswordCollection = BehaviorRelay<[PasswordDetails]>(value: [PasswordDetails]())
     var webService = PasswordApiService()
     let aes: AES
     
@@ -28,7 +29,7 @@ class PasswordViewModel: PasswordViewModelProtocol {
     }
     
     
-    func createPassword(passwordDetails: PasswordDetails) {
+    func createPassword(passwordDetails: PasswordDetails, completion: @escaping () -> Void) {
         let encryptionResponse = encrypt(value: passwordDetails.passwordHash)
         switch encryptionResponse {
         case .error:
@@ -36,10 +37,47 @@ class PasswordViewModel: PasswordViewModelProtocol {
         case .response(let encryptedPassword):
             passwordDetails.passwordHash = encryptedPassword
         }
-        webService.postNewPassword(password: passwordDetails)
+        webService.postNewPassword(password: passwordDetails) {
+            completion()
+        }
+    }
+    
+    func deletePassword(passwordDto: PasswordDetails, completion: @escaping () -> Void) {
+        webService.deletePassword(passwordDto: passwordDto) {
+            completion()
+        }
+    }
+    
+    func modifyPassword(passwordDetails: PasswordDetails, completion: @escaping () -> Void) {
+        let encryptionResponse = encrypt(value: passwordDetails.passwordHash)
+        switch encryptionResponse {
+        case .error:
+            print ("error should be thrown. refactod todo")
+        case .response(let encryptedPassword):
+            passwordDetails.passwordHash = encryptedPassword
+        }
+        webService.modifyPassword(passwordDetails: passwordDetails) {
+            completion()
+        }
     }
     
     func fetchGroupPasswords() {
+        webService.fetchGroupPasswords(completion: {
+            passwords in
+            let decryptedPasswords = passwords.map({
+                (password: PasswordDetails) -> PasswordDetails in
+                let decryptionResponse = self.decrypt(value: password.passwordHash)
+                
+                switch decryptionResponse {
+                case .error:
+                    print("error should be thrown. refactor todo. decryption")
+                case .response(let decryptedPassword):
+                    password.passwordHash = decryptedPassword
+                }
+                return password
+            })
+            self.sharedPasswordCollection.accept(decryptedPasswords)
+        })
     }
     
     func fetchPasswords() -> Void {

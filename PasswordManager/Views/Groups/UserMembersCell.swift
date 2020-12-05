@@ -21,8 +21,7 @@ class UserMembersCell: UITableViewCell {
     }
     
     @IBAction func deleteUserTapped(_ sender: UIButton) {
-        usersViewModel?.deleteUserFromGroup(userId: user!.id, groupId: groupId!)
-        delegate?.refreshView()
+        delegate?.refreshView(groupId: groupId!, userId: user!.id)
         
     }
 }

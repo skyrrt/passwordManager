@@ -23,11 +23,16 @@ class GroupsTableViewCell: UITableViewCell {
     
     @IBAction func membersButtonTapped(_ sender: UIButton) {
         if (self.delegate != nil) {
-            self.delegate.callSegueFromCell(myData: groupDetails!.id)
+            self.delegate.navigateToMembers(myData: groupDetails!.id!)
         }
     }
     
     @IBAction func leaveButtonTapped(_ sender: UIButton) {
+        delegate.leaveGroup(groupId: groupDetails!.id!)
+    }
+    
+    @IBAction func inviteTapped(_ sender: UIButton) {
+        delegate.showGroupInvitation(groupId: groupDetails!.id!)
     }
     
 }

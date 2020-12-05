@@ -28,8 +28,15 @@ class GroupMembersViewController: UITableViewController, ViewRefreshDelegate {
         usersViewModel?.fetchGroupUsers(groupId: groupId!)
     }
     
-    func refreshView() {
-        usersViewModel?.fetchGroupUsers(groupId: groupId!)
+    @IBAction func refetchGoups(_ sender: UIRefreshControl) {
+        self.usersViewModel?.fetchGroupUsers(groupId: groupId!)
+        sender.endRefreshing()
+    }
+    
+    func refreshView(groupId: String, userId: String) {
+        usersViewModel?.deleteUserFromGroup(userId: userId, groupId: groupId) {
+            self.usersViewModel?.fetchGroupUsers(groupId: groupId)
+        }
     }
     
     func repopulateView() {
@@ -54,5 +61,5 @@ class GroupMembersViewController: UITableViewController, ViewRefreshDelegate {
 }
 
 protocol ViewRefreshDelegate {
-    func refreshView()
+    func refreshView(groupId: String, userId: String)
 }

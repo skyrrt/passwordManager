@@ -11,7 +11,7 @@ import Firebase
 
 class UserApiService {
     let urlSession = URLSession.shared
-    let urlString = "http://127.0.0.1:8080"
+    let urlString = "http://192.168.1.7:8080"
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
     
@@ -55,9 +55,16 @@ class UserApiService {
         task.resume()
     }
     
-    func deleteUserFromGroup(userId: String, groupId: String) {
+    func deleteUserFromGroup(userId: String, groupId: String, completion: @escaping () -> Void) {
         var request = URLRequest(url: URL(string: urlString + "/groups/users?userId=\(userId)&groupId=\(groupId)")!)
         request.httpMethod = "DELETE"
-        urlSession.dataTask(with: request).resume()
+        let task = urlSession.dataTask(with: request) {
+            data, response, error in
+            guard data != nil, error == nil else {
+                return
+            }
+            completion()
+        }
+        task.resume()
     }
 }

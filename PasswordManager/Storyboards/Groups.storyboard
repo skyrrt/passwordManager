@@ -4,11 +4,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Groups View Controller-->
+        <!--Groups-->
         <scene sceneID="CFL-bK-ewz">
             <objects>
                 <tableViewController storyboardIdentifier="GroupsViewController" id="xdp-Lp-udS" customClass="GroupsViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,6 +52,9 @@
                                             <rect key="frame" x="189" y="6" width="37" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Invite"/>
+                                            <connections>
+                                                <action selector="inviteTapped:" destination="apG-X8-EQo" eventType="touchUpInside" id="lQl-9W-VEd"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -66,24 +70,44 @@
                             <outlet property="delegate" destination="xdp-Lp-udS" id="Rmx-cr-b4K"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3dt-ec-WrX">
-                        <barButtonItem key="leftBarButtonItem" title="Join" id="68g-iE-83e"/>
+                    <navigationItem key="navigationItem" title="Groups" id="3dt-ec-WrX">
+                        <barButtonItem key="leftBarButtonItem" title="Join" id="68g-iE-83e">
+                            <connections>
+                                <action selector="joinTapped:" destination="xdp-Lp-udS" id="vqU-sX-269"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="uGi-ft-NND">
                             <connections>
                                 <action selector="addGroupAdded:" destination="xdp-Lp-udS" id="vCw-ud-MTX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="phv-9h-93o">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Fetching data...">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <connections>
+                            <action selector="refreshGroupsPulled:" destination="xdp-Lp-udS" eventType="valueChanged" id="JRl-9v-qZw"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="groupsTableView" destination="Plw-HX-Hka" id="e5q-Nq-QpW"/>
                         <segue destination="2Fm-5P-MWu" kind="show" identifier="GroupMembersSegue" id="KFD-tr-VQd"/>
+                        <segue destination="lM1-nH-pOA" kind="show" identifier="qrCodeScannerSegue" id="AxT-Yk-7Ig"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fw7-je-uHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055.072463768116" y="86.383928571428569"/>
         </scene>
-        <!--Group Members View Controller-->
+        <!--Group Members-->
         <scene sceneID="PSY-EI-Fhc">
             <objects>
                 <tableViewController id="2Fm-5P-MWu" customClass="GroupMembersViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,7 +150,22 @@
                             <outlet property="delegate" destination="2Fm-5P-MWu" id="TPd-h7-ljy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rjG-DA-6la"/>
+                    <navigationItem key="navigationItem" title="Group Members" id="rjG-DA-6la"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="OoD-S5-Meh">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Fetching data...">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <connections>
+                            <action selector="refetchGoups:" destination="2Fm-5P-MWu" eventType="valueChanged" id="RXl-jt-WFZ"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="usersTableView" destination="sAO-Ww-xoH" id="auc-Nt-qKh"/>
                     </connections>
@@ -154,6 +193,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gg9-B5-PZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="144.92753623188406" y="86.383928571428569"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="Gfh-7V-qa3">
+            <objects>
+                <viewController id="lM1-nH-pOA" customClass="ScannerViewController" customModule="PasswordManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M84-Op-vv3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5rg-va-sYR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="woZ-jJ-h4D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="coJ-rL-brD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784" y="-584"/>
         </scene>
     </scenes>
     <resources>

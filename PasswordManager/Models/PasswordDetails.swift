@@ -15,14 +15,16 @@ class PasswordDetails: Codable {
     var userAccount: String
     let userId: String
     var groupId: String?
+    let groupName: String?
     
-    init(id: String?, vendorName: String, passwordHash: String, userAccount: String, userId: String, groupId: String?){
+    init(id: String?, vendorName: String, passwordHash: String, userAccount: String, userId: String, groupId: String?, groupName: String?){
         self.vendorName = vendorName
         self.passwordHash = passwordHash
         self.userAccount = userAccount
         self.userId = userId
         self.groupId = groupId
         self.id = id
+        self.groupName = groupName
     }
     
     
