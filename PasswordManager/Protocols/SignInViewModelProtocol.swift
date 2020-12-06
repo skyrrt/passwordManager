@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SignInViewModelProtocol {
-    func authenticateUser(userName: String?, password: String?, completion: @escaping (SignInResult) -> Void)
+    func authenticateUser(userName: String?, password: String?, enableFaceId: Bool, completion: @escaping (SignInResult) -> Void)
 }

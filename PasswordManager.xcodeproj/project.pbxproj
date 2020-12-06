@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42633FE059FAF9647B302D81 /* Pods_PasswordManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13016AB933E96499B24C151 /* Pods_PasswordManager.framework */; };
+		FA0C50DB257D3C5E00511873 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C50DA257D3C5E00511873 /* KeychainPasswordItem.swift */; };
 		FA0FD89D25507DFC00B7394D /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FD89C25507DFC00B7394D /* GroupsViewController.swift */; };
 		FA0FD8A32551CBFC00B7394D /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0FD8A22551CBFC00B7394D /* Groups.storyboard */; };
 		FA0FD8A62551CC0A00B7394D /* GroupRequests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0FD8A52551CC0A00B7394D /* GroupRequests.storyboard */; };
@@ -63,6 +64,7 @@
 		090F005EAB978235A4CAD0C3 /* Pods-PasswordManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.release.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.release.xcconfig"; sourceTree = "<group>"; };
 		26DA83A078E6AFDEEA7BEB01 /* Pods-PasswordManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordManager.debug.xcconfig"; path = "Target Support Files/Pods-PasswordManager/Pods-PasswordManager.debug.xcconfig"; sourceTree = "<group>"; };
 		D13016AB933E96499B24C151 /* Pods_PasswordManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0C50DA257D3C5E00511873 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		FA0FD89C25507DFC00B7394D /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		FA0FD8A22551CBFC00B7394D /* Groups.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		FA0FD8A52551CC0A00B7394D /* GroupRequests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupRequests.storyboard; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		FA9801A824A3A82600E2D44E /* PasswordManager */ = {
 			isa = PBXGroup;
 			children = (
+				FA0C50DA257D3C5E00511873 /* KeychainPasswordItem.swift */,
 				FA741751255C3C5C0079DBC8 /* Protocols */,
 				FA2038C8252094EE00FC30B0 /* Networking */,
 				FAE4F21C24B2414F00CA80A9 /* Extensions */,
@@ -442,6 +445,7 @@
 				FAEE44F724BCC8C10039B25D /* UserViewModel.swift in Sources */,
 				FA39279B255ED6E600AA4729 /* GroupsViewModel.swift in Sources */,
 				FA9801AE24A3A82600E2D44E /* PasswordListViewController.swift in Sources */,
+				FA0C50DB257D3C5E00511873 /* KeychainPasswordItem.swift in Sources */,
 				FA1A6E6A24E2F75A002ECCA2 /* ModifyPasswordViewController.swift in Sources */,
 				FA54E1BD25782ED1001553FE /* GroupRequestCell.swift in Sources */,
 				FA9FB637256EEB4A006982DE /* UserApiService.swift in Sources */,

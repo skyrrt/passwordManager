@@ -89,11 +89,24 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             found(code: stringValue)
         }
 
-        dismiss(animated: true)
     }
 
     func found(code: String) {
-        delegate?.foundCodeHandler(groupId: code)
+        let ac = UIAlertController(title: "Do you want to send request to join this group?", message: nil, preferredStyle: .alert)
+
+        let submitAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            self.delegate?.foundCodeHandler(groupId: code)
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        let dismissAction = UIAlertAction(title: "No", style: .default) { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+
+        ac.addAction(submitAction)
+        ac.addAction(dismissAction)
+
+        present(ac, animated: true)
+        
     }
 
     override var prefersStatusBarHidden: Bool {

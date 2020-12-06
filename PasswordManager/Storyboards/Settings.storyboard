@@ -56,6 +56,14 @@
                                     <action selector="deleteAccountTapped:" destination="PyG-O4-dDr" eventType="touchUpInside" id="vmT-hW-ebZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYH-Kv-Vw1">
+                                <rect key="frame" x="125" y="613" width="166" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Disable face recognition"/>
+                                <connections>
+                                    <action selector="disableFaceRecognition:" destination="PyG-O4-dDr" eventType="touchUpInside" id="2eQ-9T-WLE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9of-na-MUh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

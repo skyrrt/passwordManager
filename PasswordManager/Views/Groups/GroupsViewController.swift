@@ -36,7 +36,7 @@ class GroupsViewController: UITableViewController, MyCustomCellDelegator {
     }
     
     func foundCodeHandler(groupId: String) {
-        print(groupId)
+        self.groupsViewModel?.sendRequest(request: GroupRequestDto(id: nil, groupId: groupId, userId: Auth.auth().currentUser!.uid))
     }
     
     func repopulateView() {
